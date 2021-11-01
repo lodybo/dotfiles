@@ -2,7 +2,10 @@
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/lody/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
+
+# Path to .dotfiles
+export DOTFILES=$HOME/.dotfiles
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -61,12 +64,11 @@ COMPLETION_WAITING_DOTS="true"
 HIST_STAMPS="yyyy-mm-dd"
 
 # Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
+ZSH_CUSTOM=$DOTFILES/oh-my-zsh/custom
 
 # Some plugin configuration, some need to be done before the plugin is loaded (for example: zsh-nvm)
 export NVM_COMPLETION=true
 export NVM_LAZY_LOAD=true
-
 
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
@@ -98,6 +100,7 @@ export EDITOR='vim'
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
 ###-begin-npm-completion-###
 #
 # npm command completion script
@@ -159,7 +162,9 @@ elif type compctl &>/dev/null; then
 fi
 ###-end-npm-completion-###
 
-alias ls='exa'
-alias lsa='exa -lah'
+# Load local config if it exists
+if [ -f ~/.zshrc_local ]; then
+    source ~/.zshrc_local
+fi
 
 source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
