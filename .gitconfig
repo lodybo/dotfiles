@@ -1,0 +1,38 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+#	name = Lody Borgers
+#	email = hi@lodybo.nl= 
+[user]
+	name = Lody Borgers
+	email = hi@lodybo.nl
+
+[color]
+	branch = auto
+	diff = auto
+	status = auto
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
+
+[alias]
+	log = log --graph --all --decorate --stat --date=iso
+	cm = commit -am
+	undo = reset --soft HEAD^
+	abort = reset HEAD
+	nope = checkout .
+[init]
+	templatedir = ~/.git_template
+	defaultBranch = main
+[core]
+	autocrlf = input
