@@ -1,5 +1,5 @@
 # My `.dotfiles`
-version: 0.6.2
+version: 0.7.0
 
 This repo is my collection of dotfiles that I use across setups (like personal and work computers).
 It's based on and heavily influenced on a number of other people's work (referenced in [credits](#credits)).
@@ -45,26 +45,26 @@ In order to set all of this up you need to have a system set up running the foll
 The first step is to install these dependencies before we can go any further:
 ```shell
 # Update packages
-$ apt update -y
+apt update -y
 
 # Install needed stuff
-$ apt install zsh git curl python
+apt install zsh git curl python
 ```
 
 ### Cloning this repo
 The next step is to go into the `/home/` folder and clone the repository. I'd like to put it into a dotfolder.
 
 ```shell
-$ cd ~
-$ git clone https://github.com/lodybo/dotfiles.git .dotfiles
+cd ~
+git clone https://github.com/lodybo/dotfiles.git .dotfiles
 ```
 
 ### Run install
 After that, we'll `cd` into our folder and start the install script:
 
 ```shell
-$ cd .dotfiles
-$ ./install
+cd .dotfiles
+./install
 ```
 
 ## Credits

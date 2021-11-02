@@ -33,6 +33,5 @@ if ! chsh -s "$zsh"; then
   fi
 
 echo ""
-echo "Setting up environment and launching Zsh..."
-touch .dotfiles-first-run
+echo "Launching Zsh..."
 exec zsh --login
