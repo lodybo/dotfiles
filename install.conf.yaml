@@ -20,8 +20,7 @@
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
-    - [cd ~, Go back to the /home/ folder]
-    - [exec zsh --login, Restart Zsh shell]
+    - [curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash, Install nvm]
     - [nvm install --lts, Install latest Node LTS version]
 
 - npm:
