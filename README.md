@@ -7,7 +7,14 @@ It's based on and heavily influenced on a number of other people's work (referen
 This repository is managed by [Dotbot](https://github.com/anishathalye/dotbot) which helps me install everything on each computer I work with.
 The basic setup is simple: Dotbot will (on install) copy directories and symlink dotfiles on the pc that I'm running it on. These will be my shared settings, i.e. the settings I will use everywhere (like terminal settings, aliases, and such).
 
+## Local overrides
 Some configs will additionally load a local configuration file. This will then "merge" the computer-specific configuration with my shared configuration. I can have settings that I only use on my work pc without having them show up on my personal computer. This is also very handy for _super secret information_™.
+
+The files that will look for overrides are:
+- `vim` (``~/.vimrc_local`)
+- `ssh` (`~/.ssh/config_local`)
+- `git` (`~/.gitconfig_local`)
+- `zsh` (`~/.zshrc_local`)
 
 ## Topics
 My dotfiles are divided in a number of topics (an idea from [Zach Holman](https://github.com/holman/dotfiles#topical)). The top-level folders are "topics" which contain configuration. It provides a cleaner overview IMO. 

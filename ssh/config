@@ -1,5 +1,5 @@
 # Include local config
-Include ~/.ssh/config.local
+Include ~/.ssh/config_local
 
 Host github.com
   AddKeysToAgent yes
