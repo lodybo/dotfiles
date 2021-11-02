@@ -170,4 +170,4 @@ if [ -f ~/.zshrc_local ]; then
     source ~/.zshrc_local
 fi
 
-source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $ZSH_CUSTOM/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
