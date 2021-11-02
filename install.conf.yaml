@@ -18,10 +18,12 @@
       force: true
       path: zsh/zshrc
 
+- shell:
+    - [git submodule update --init --recursive, Installing submodules]
+    - [cd ~, Go back to the /home/ folder]
+    - [exec zsh --login, Restart Zsh shell]
+    - [nvm install --lts, Install latest Node LTS version]
+
 - npm:
     - rimraf
     - npm-check
-  
-- shell:
-    - [git submodule update --init --recursive, Installing submodules]
-    - [exec zsh --login]
