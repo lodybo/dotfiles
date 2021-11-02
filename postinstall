@@ -1,12 +1,18 @@
 #!/usr/bin/env bash
+until [ -f ~/.nvm/nvm.sh ]
+  do
+     sleep 5
+  done
+  echo "nvm appears to be loaded.."
+  
+  echo ""
+  echo "Running post install steps"
 
-echo ""
-echo "Running post install steps"
+  echo ""
+  echo "Installing latest LTS version of Node"
+  nvm install --lts
 
-echo ""
-echo "Installing latest LTS version of Node"
-nvm install --lts
-
-echo ""
-echo "Installing global scripts"
-npm i -g rimraf npm-check
+  echo ""
+  echo "Installing global scripts"
+  npm i -g rimraf npm-check
+  exit;
