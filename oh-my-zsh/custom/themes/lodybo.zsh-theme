@@ -1,5 +1,6 @@
 NEWLINE=$'\n'
-PROMPT="$(get_battery_status)%(?:%{$fg_bold[cyan]%}%n%{$fg[white]%}: ):%{$fg[green]%}%c"
+PROMPT='$(get_battery_status)'
+PROMPT+="%(?:%{$fg_bold[cyan]%}%n%{$fg[white]%}: ):%{$fg[green]%}%c"
 PROMPT+='$(git_prompt_info)'
 PROMPT+="${NEWLINE}%{$fg[magenta]%}❯%{$reset_color%} "
 
@@ -11,7 +12,7 @@ ZSH_THEME_GIT_PROMPT_CLEAN=""
 # And ZSH_THEME_GIT_PROMPT_* variables: https://gist.github.com/vergenzt/33a45a9a9218b38bd4bf
 
 function get_battery_status() {
-  $DOTFILES/bin/mac_battery_status
+  $DOTFILES/bin/mac-battery-status
 }
 
 function git_prompt_info() {

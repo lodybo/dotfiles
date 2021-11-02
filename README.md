@@ -1,5 +1,5 @@
 # My `.dotfiles`
-version: 0.2.2
+version: 0.2.3
 
 This repo is my collection of dotfiles that I use across setups (like personal and work computers).
 It's based on and heavily influenced on a number of other people's work (referenced in [credits](#credits)).
