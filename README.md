@@ -35,3 +35,7 @@ They're marked below:
 * [holman](https://github.com/holman/dotfiles): because dividing my dotfiles in topics seemed like a very good idea, and for some inspiration for my dotfiles.
 * [caarlos0](https://github.com/caarlos0/dotfiles): for inspiration for my dotfiles.
 * [zvory](https://github.com/zvory/dotfiles): for inspiration for my dotfiles and handling cross-platform binaries (like `bat` and `exa`).
+
+Other people I want to credit for their contributions:
+* [amix](https://github.com/amix/vimrc): for a very concise Vim setup. I used the basic configuration.
+* [simonista](https://gist.github.com/simonista/8703722): for any additional Vim configuration.
