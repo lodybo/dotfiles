@@ -11,7 +11,7 @@ The basic setup is simple: Dotbot will (on install) copy directories and symlink
 Some configs will additionally load a local configuration file. This will then "merge" the computer-specific configuration with my shared configuration. I can have settings that I only use on my work pc without having them show up on my personal computer. This is also very handy for _super secret information_™.
 
 The files that will look for overrides are:
-- `vim` (``~/.vimrc_local`)
+- `vim` (`~/.vimrc_local`)
 - `ssh` (`~/.ssh/config_local`)
 - `git` (`~/.gitconfig_local`)
 - `zsh` (`~/.zshrc_local`)
