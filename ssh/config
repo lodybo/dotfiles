@@ -1,14 +1,7 @@
-Host bitbucket.org
-    UseKeychain yes
-
-# GitLab.com
-Host gitlab.com
-  Preferredauthentications publickey
-  IdentityFile ~/.ssh/gitlab_id_rsa
+# Include local config
+Include ~/.ssh/config.local
 
 Host github.com
   AddKeysToAgent yes
   UseKeychain yes
   IdentityFile ~/.ssh/github_id_ed
-
-Include ~/.ssh/config.local
