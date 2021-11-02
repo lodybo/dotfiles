@@ -16,7 +16,7 @@ git submodule update --init --recursive "${DOTBOT_DIR}"
 
 echo ""
 echo "Installing Oh My Zsh.."
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
 echo ""
 echo "Installing nvm..."
@@ -28,5 +28,19 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-
+echo ""
+echo "Running Dotobot"
 "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" --plugin-dir "${DOTBOT_PLUGINS_DIR}" "${@}"
+
+echo ""
+echo "Changing default shell"
+if ! chsh -s "$zsh"; then
+    fmt_error "chsh command unsuccessful. Change your default shell manually."
+  else
+    export SHELL="$zsh"
+    echo "Shell successfully changed to '$zsh'."
+  fi
+
+echo ""
+echo "Launching Zsh"
+exec zsh --login
