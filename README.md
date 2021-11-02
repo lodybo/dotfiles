@@ -26,7 +26,6 @@ With all that said, these are the topics currently available:
 - `oh-my-zsh`: for my custom theme and the home of the `custom` folder with my aliases, functions and plugins.
 - `zsh`: for my Zsh configration.
 
-<a name="credits" />
 ## Credits
 Like mentioned earlier, my dotfiles are heavily influenced/based on other people's dotfiles repositories.
 They're marked below:
