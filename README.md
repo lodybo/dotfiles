@@ -1,5 +1,5 @@
 # My `.dotfiles`
-version: 0.1.0
+version: 0.2.0
 
 This repo is my collection of dotfiles that I use across setups (like personal and work computers).
 It's based on and heavily influenced on a number of other people's work (referenced in [credits](#credits)).
@@ -32,6 +32,43 @@ With all that said, these are the topics currently available:
 
 ### npm
 There is also a step that will install npm binaries globally (like `rimraf` which I use all the time). The list for this is in `install.conf.yaml`.
+
+## Getting up and running
+In order to set all of this up you need to have a system set up running the following:
+- zsh
+- oh-my-zsh
+- git
+- curl (or wget)
+- python
+
+### Installing dependencies
+The first step is to install these dependencies before we can go any further:
+```shell
+# Update packages
+$ apt update -y
+
+# Install needed stuff
+$ apt install zsh git curl python
+
+# Install Oh My Zsh (see their website for the latest info)
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+### Cloning this repo
+The next step is to go into the `/home/` folder and clone the repository. I'd like to put it into a dotfolder.
+
+```shell
+$ cd ~
+$ git clone https://github.com/lodybo/dotfiles.git .dotfiles
+```
+
+### Run install
+After that, we'll `cd` into our folder and start the install script:
+
+```shell
+$ cd .dotfiles
+$ ./install
+```
 
 ## Credits
 Like mentioned earlier, my dotfiles are heavily influenced/based on other people's dotfiles repositories.

@@ -1,27 +1,27 @@
 - defaults:
-  link:
-    create: true
-    relink: true
+    link:
+      create: true
+      relink: true
 
 - clean: ['~']
 
 - link:
-  ~/.gitconfig:
-    path: git/gitconfig
-  ~/.git_template: git/git_template
-  ~/.ssh/config:
-    path: ssh/config
-  ~/.vim: vim/vim
-  ~/.vimrc:
-    path: vim/vimrc
-  ~/.zshrc:
-    force: true
-    path: zsh/zshrc
+    ~/.gitconfig:
+      path: git/gitconfig
+    ~/.git_template: git/git_template
+    ~/.ssh/config:
+      path: ssh/config
+    ~/.vim: vim/vim
+    ~/.vimrc:
+      path: vim/vimrc
+    ~/.zshrc:
+      force: true
+      path: zsh/zshrc
 
 - npm:
-  - rimraf
-  - npm-check
+    - rimraf
+    - npm-check
   
 - shell:
-  - [git submodule update --init --recursive, Installing submodules]
-  - [chsh -s $(which zsh), Making zsh the default shell]
+    - [git submodule update --init --recursive, Installing submodules]
+    - [chsh -s $(which zsh), Making zsh the default shell]
