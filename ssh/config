@@ -2,6 +2,7 @@
 Include ~/.ssh/config_local
 
 Host github.com
+  IgnoreUnknown UseKeychain, AddKeysToAgent
   AddKeysToAgent yes
   UseKeychain yes
   IdentityFile ~/.ssh/github_id_ed
