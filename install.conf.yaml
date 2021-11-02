@@ -17,6 +17,10 @@
   ~/.zshrc:
     force: true
     path: zsh/zshrc
+
+- npm:
+  - rimraf
+  - npm-check
   
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
