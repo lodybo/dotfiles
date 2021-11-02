@@ -33,5 +33,6 @@ if ! chsh -s "$zsh"; then
   fi
 
 echo ""
-echo "Launching Zsh"
-exec zsh --login ./postinstall
+echo "Setting up environment and launching Zsh..."
+touch .dotfiles-first-run
+exec zsh --login

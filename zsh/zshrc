@@ -2,7 +2,15 @@
 export ZSH="$HOME/.oh-my-zsh"
 
 # Path to .dotfiles
-export DOTFILES=$HOME/.dotfiles
+export DOTFILES="$HOME/.dotfiles"
+
+# Check if this is the first run of our .dotfiles installation.
+# If so, run the "./postinstall" script.
+FILE="$DOTFILES/.dotfiles-first-run"
+if [ -f "$FILE" ]; then
+  rm "$FILE"
+  sh "$DOTFILES/.postinstall"
+fi
 
 # If you come from bash you might have to change your $PATH.
 # Done fancy, because we can: https://stackoverflow.com/a/18077919/1053777
