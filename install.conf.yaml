@@ -21,7 +21,3 @@
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
     - [nvm install --lts, Install latest Node LTS version]
-
-- npm:
-    - rimraf
-    - npm-check
