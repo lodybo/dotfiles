@@ -1,3 +1,11 @@
+exa_binary="unknown"
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+    exa_binary="exa-linux"
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+    exa_binary="exa-macos"
+fi
+
+alias exa="${exa_binary}"
 alias ls='exa'
 alias lsa='exa -lah'
 alias eagle_eye='exa --tree --level=2'

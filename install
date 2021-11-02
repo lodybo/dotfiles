@@ -34,4 +34,4 @@ if ! chsh -s "$zsh"; then
 
 echo ""
 echo "Launching Zsh"
-exec zsh --login
+exec zsh --login ./postinstall

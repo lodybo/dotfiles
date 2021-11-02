@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+echo ""
+echo "Running post install steps"
+
+echo ""
+echo "Installing latest LTS version of Node"
+nvm install --lts
+
+echo ""
+echo "Installing global scripts"
+npm i -g rimraf npm-check
