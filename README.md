@@ -1,5 +1,5 @@
 # My `.dotfiles`
-version: 0.3.5
+version: 0.4.0
 
 This repo is my collection of dotfiles that I use across setups (like personal and work computers).
 It's based on and heavily influenced on a number of other people's work (referenced in [credits](#credits)).
@@ -49,9 +49,6 @@ $ apt update -y
 
 # Install needed stuff
 $ apt install zsh git curl python
-
-# Install Oh My Zsh (see their website for the latest info)
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
 ### Cloning this repo

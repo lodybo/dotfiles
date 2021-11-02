@@ -24,6 +24,7 @@ echo "Running Dotbot"
 
 echo ""
 echo "Changing default shell"
+zsh=$(command -v zsh)
 if ! chsh -s "$zsh"; then
     fmt_error "chsh command unsuccessful. Change your default shell manually."
   else
