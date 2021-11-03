@@ -87,3 +87,23 @@ They're marked below:
 Other people I want to credit for their contributions:
 * [amix](https://github.com/amix/vimrc): for a very concise Vim setup. I used the basic configuration.
 * [simonista](https://gist.github.com/simonista/8703722): for any additional Vim configuration.
+
+## Contributing
+Since this repo is essentially always present on my development machines AND in use, development can be considered "always on going".
+
+However, there is a way to test this repo in a new linux install, with Docker.
+
+### Testing in Docker
+Docker is an excellent tool to test the effects of this repo with. For my convience, a `Dockerfile` is included in the repo. This will set up a basic environment, based on Ubuntu, installing the necessary dependencies (including Vim, for editing), creating a user called `tester`, and adding the current repo as `/home/tester/.dotfiles`.
+
+You can build the `Dockerfile` thusly:
+
+```shell
+docker build . -t dotfiles-test
+```
+
+You can run it thusly:
+
+```shell
+docker run --rm -it dotfiles-test
+```

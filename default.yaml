@@ -5,6 +5,13 @@
 
 - clean: ['~']
 
+- shell:
+    - [ test -f ~/.gitconfig && mv ~/.gitconfig ~/.gitconfig_local, Checking ~/.gitconfig presence, moving it if needed.]
+    - [ test -f ~/.ssh/config && mv ~/.ssh/config ~/.ssh/config_local, Checking ~/.ssh/config presence, moving it if needed.]
+    - [ test -f ~/.vimrc && mv ~/.vimrc ~/.vimrc_local, Checking ~/.vimrc presence, moving it if needed.]
+    - [ test -f ~/.npmrc && mv ~/.npmrc ~/.npmrc_local, Checking ~/.npmrc presence, moving it if needed.]
+    - [ test -f ~/.bashrc && mv ~/.bashrc ~/.bashrc_local, Checking ~/.bashrc presence, moving it if needed.]
+
 - link:
     ~/.gitconfig:
       path: git/gitconfig
