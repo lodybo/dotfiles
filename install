@@ -14,14 +14,15 @@ git submodule update --init --recursive "${DOTBOT_DIR}"
 
 echo ""
 echo "Running Dotbot configs"
-for conf in ${DEFAULT_CONFIG_PREFIX} ${@}; do
+for conf in "${DEFAULT_CONFIG_PREFIX}" "${@}"; do
   echo "Setting up ${conf} configuration"
   "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -p dotbot-plugins/npm.py -c "${conf}${CONFIG_SUFFIX}"
 done
 
-if test -n $@; then
+if [ "$#" -eq 1 ]; then
   echo ""
   echo "Changing default shell"
+
   zsh=$(command -v zsh)
   if ! chsh -s "$zsh"; then
       echo "ERROR ==> chsh command unsuccessful. Change your default shell manually."
@@ -29,8 +30,8 @@ if test -n $@; then
       export SHELL="$zsh"
       echo "Shell successfully changed to '$zsh'."
     fi
-
-  echo ""
-  echo "Launching new shell..."
-  exec zsh --login
 fi
+
+echo ""
+echo "Launching new shell..."
+exec "$SHELL" --login

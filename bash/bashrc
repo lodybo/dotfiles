@@ -7,14 +7,8 @@ export DOTFILES="$HOME/.dotfiles"
 export PATH="$DOTFILES/bin:$PATH"
 
 # Source shell files in .dotfiles/shell
-for file in "$DOTFILES/shell/*"
+FILES="$DOTFILES/shell/*"
+for file in $FILES
 do
   source "$file"
 done
-
-# Load autocompletes
-if [ -z $(command -v brew)];
-  if [ -f $(brew --prefix)/etc/bash_completion ]; then
-    . $(brew --prefix)/etc/bash_completion
-  fi
-fi
