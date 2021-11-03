@@ -33,13 +33,30 @@ With all that said, these are the topics currently available:
 ### npm
 There is also a step that will install npm binaries globally (like `rimraf` which I use all the time). The list for this is in `install.conf.yaml`.
 
+## Configurations
+This repo is set up with the ability to run multiple configurations. This is so that can have a "layered" setup. I can determine which config I want to run during install
+and set up my environment to my wishes.
+
+### Default / Lite
+The default (or "lite") version sets up my aliases, functions, git config/templates, vim config and ssh config. It doesn't change the terminal (keeping it `bash`),
+doesn't set up Zsh or Oh My Zsh and adds a few binaries to the path but doesn't alias them.
+This set up is exceptionally handy on servers!
+
+### Linux / full
+The linux (or "full") set up builds on the default one. All the settings mentioned above are happening, but this config expands by moving the linux binaries of `bat` and `exa` into the `PATH`,
+adding their aliases, installing and configuring Zsh and Oh My Zsh, adding Zsh-related functions and installing/configuring `nvm`.
+
+### MacOS / full
+The MacOS (also "full") set up does a lot of the things the linux install does (but then obviously set up for a mac), but it also sets up the `osx` plugin in OMZ,
+sets up some Mac specific settings and installs Homebrew.
+
 ## Getting up and running
 In order to set all of this up you need to have a system set up running the following:
-- zsh
-- oh-my-zsh
 - git
 - curl (or wget)
 - python
+
+We'll start with the lite install
 
 ### Installing dependencies
 The first step is to install these dependencies before we can go any further:
@@ -48,15 +65,7 @@ The first step is to install these dependencies before we can go any further:
 apt update -y
 
 # Install needed stuff
-apt install zsh git curl python
-
-# Also install Oh My Zsh and nvm beforehand so that we can restart the shell.
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
-
-# Source nvm and install latest Node LTS
-. ~/.zshrc
-nvm install --lts
+apt install git curl python
 ```
 
 ### Cloning this repo
@@ -67,12 +76,42 @@ cd ~
 git clone https://github.com/lodybo/dotfiles.git .dotfiles
 ```
 
-### Run install
-After that, we'll `cd` into our folder and start the install script:
+### Installing the Lite version
+The steps thus far are all we need in order to install the default / lite version of our `.dotfiles`.
+We can now `cd` into our folder and start the install script:
 
 ```shell
 cd .dotfiles
 ./install
+```
+
+### Installing the Linux version or MacOS version
+If we want to set up the Linux or MacOS version (the "full" one), we need to install Zsh, Oh My Zsh and nvm.
+We can run the following commands for that:
+
+```shell
+apt update -y
+
+apt install git curl python zsh
+
+# Install Oh My Zsh and nvm beforehand so that we can restart the shell.
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+
+# Source nvm and install latest Node LTS
+. ~/.zshrc
+nvm install --lts
+```
+
+In order to run the configuration we need to specify that to our install script. It takes an argument like `linux` or `macos` (I wouldn't add them both).
+
+```shell
+cd ~
+git clone https://github.com/lodybo/dotfiles.git .dotfiles
+cd .dotfiles
+./install linux
+# or
+./install macos
 ```
 
 ## Credits
