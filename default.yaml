@@ -16,6 +16,8 @@
       path: vim/vimrc
     ~/.npmrc:
       path: npm/npmrc
+    ~/.bashrc:
+      path: bash/bashrc
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
