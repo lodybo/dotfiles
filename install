@@ -4,7 +4,7 @@ set -e
 
 DEFAULT_CONFIG_PREFIX="default"
 CONFIG_SUFFIX=".conf.yaml"
-DOTBOT_DIR=".dotbot"
+DOTBOT_DIR="dotbot"
 
 DOTBOT_BIN="bin/dotbot"
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -15,19 +15,22 @@ git submodule update --init --recursive "${DOTBOT_DIR}"
 echo ""
 echo "Running Dotbot configs"
 for conf in ${DEFAULT_CONFIG_PREFIX} ${@}; do
-    "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -p dotbot-plugins/npm.py -c "${conf}${CONFIG_SUFFIX}"
+  echo "Setting up ${conf} configuration"
+  "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -p dotbot-plugins/npm.py -c "${conf}${CONFIG_SUFFIX}"
 done
 
-echo ""
-echo "Changing default shell"
-zsh=$(command -v zsh)
-if ! chsh -s "$zsh"; then
-    echo "ERROR ==> chsh command unsuccessful. Change your default shell manually."
-  else
-    export SHELL="$zsh"
-    echo "Shell successfully changed to '$zsh'."
-  fi
+if test -n $@; then
+  echo ""
+  echo "Changing default shell"
+  zsh=$(command -v zsh)
+  if ! chsh -s "$zsh"; then
+      echo "ERROR ==> chsh command unsuccessful. Change your default shell manually."
+    else
+      export SHELL="$zsh"
+      echo "Shell successfully changed to '$zsh'."
+    fi
 
-echo ""
-echo "Launching Zsh..."
-exec zsh --login
+  echo ""
+  echo "Launching new shell..."
+  exec zsh --login
+fi

@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# Build test container
+echo ""
+echo "Building Docker container..."
+docker build . -t dotfiles-test
+
+echo ""
+echo "Build done, starting container..."
+# Run test container
+docker run --rm -it dotfiles-test

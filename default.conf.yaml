@@ -1,0 +1,24 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+
+- clean: ['~']
+
+- link:
+    ~/.gitconfig:
+      path: git/gitconfig
+    ~/.git_template: git/git_template
+    ~/.ssh/config:
+      path: ssh/config
+    ~/.vim: vim/vim
+    ~/.vimrc:
+      path: vim/vimrc
+    ~/.npmrc:
+      path: npm/npmrc
+    ~/.bashrc:
+      force: true
+      path: bash/bashrc
+
+- shell:
+    - [git submodule update --init --recursive, Installing submodules]

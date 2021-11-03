@@ -107,3 +107,9 @@ You can run it thusly:
 ```shell
 docker run --rm -it dotfiles-test
 ```
+
+If you're lazy, like I am, you can run `run-docker-test`:
+
+```shell
+./run-docker-test
+```
