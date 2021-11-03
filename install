@@ -8,25 +8,19 @@ DOTBOT_DIR="dotbot"
 DOTBOT_BIN="bin/dotbot"
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-DOTBOT_PLUGINS_DIR="${DOTBOT_DIR}/dotbot-plugins"
-
 cd "${BASEDIR}"
 git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
 git submodule update --init --recursive "${DOTBOT_DIR}"
 
 echo ""
-echo "Installing Oh My Zsh.."
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
-
-echo ""
 echo "Running Dotbot"
-"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" --plugin-dir "${DOTBOT_PLUGINS_DIR}" "${@}"
+"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" -p dotbot-plugins/npm.py "${@}"
 
 echo ""
 echo "Changing default shell"
 zsh=$(command -v zsh)
 if ! chsh -s "$zsh"; then
-    fmt_error "chsh command unsuccessful. Change your default shell manually."
+    echo "ERROR ==> chsh command unsuccessful. Change your default shell manually."
   else
     export SHELL="$zsh"
     echo "Shell successfully changed to '$zsh'."

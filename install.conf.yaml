@@ -14,9 +14,15 @@
     ~/.vim: vim/vim
     ~/.vimrc:
       path: vim/vimrc
+    ~/.npmrc:
+      path: npm/npmrc
     ~/.zshrc:
       force: true
       path: zsh/zshrc
+  
+- npm:
+    - rimraf
+    - npm-check
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]

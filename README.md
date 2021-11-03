@@ -49,6 +49,14 @@ apt update -y
 
 # Install needed stuff
 apt install zsh git curl python
+
+# Also install Oh My Zsh and nvm beforehand so that we can restart the shell.
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+
+# Source nvm and install latest Node LTS
+. ~/.zshrc
+nvm install --lts
 ```
 
 ### Cloning this repo
