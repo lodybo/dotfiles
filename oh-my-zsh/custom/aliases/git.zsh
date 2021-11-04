@@ -1,5 +1,0 @@
-alias gb='git branch'
-alias gs='git status'
-alias glo='git log --oneline -n5'
-alias glon='git log --oneline -n$1'
-alias gll='git log --graph --pretty=oneline --abbrev-commit'
