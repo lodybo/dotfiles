@@ -1,0 +1,19 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+
+- link:
+    ~/.zshrc:
+      force: true
+      path: zsh/zshrc
+
+- npm:
+    - rimraf
+    - npm-check
+
+- shell:
+    - [git submodule update --init --recursive, Installing submodules]
+    - [mv ./bin/bat-macos ./bin/bat, Moving bat binary]
+    - [mv ./bin/exa-macos ./bin/exa, Moving exa binary]
+    - [sh ./macos/set-defaults.sh, Setting up sensible Mac defaults]
