@@ -11,8 +11,7 @@ path=("$HOME/bin" "/usr/local/bin" "$DOTFILES/bin" "$path")
 export PATH
 
 # Source shell files in .dotfiles/shell
-FILES="$DOTFILES/shell/*"
-for file in $FILES
+for file in $DOTFILES/shell/*(.);
 do
   source "$file"
 done
@@ -22,6 +21,9 @@ done
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="lodybo"
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    ZSH_THEME="lodybo-macos"
+fi
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load

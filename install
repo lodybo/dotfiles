@@ -18,20 +18,3 @@ for conf in "${DEFAULT_CONFIG_PREFIX}" "${@}"; do
   echo "Setting up ${conf} configuration"
   "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -p dotbot-plugins/npm.py -c "${conf}${CONFIG_SUFFIX}"
 done
-
-if [ "$#" -eq 1 ]; then
-  echo ""
-  echo "Changing default shell"
-
-  zsh=$(command -v zsh)
-  if ! chsh -s "$zsh"; then
-      echo "ERROR ==> chsh command unsuccessful. Change your default shell manually."
-    else
-      export SHELL="$zsh"
-      echo "Shell successfully changed to '$zsh'."
-    fi
-fi
-
-echo ""
-echo "Launching new shell..."
-exec "$SHELL" --login

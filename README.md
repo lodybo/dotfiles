@@ -99,7 +99,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
 
 # Source nvm and install latest Node LTS
-. ~/.zshrc
+. ~/.nvm/nvm.sh
 nvm install --lts
 ```
 
