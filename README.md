@@ -1,5 +1,5 @@
 # My `.dotfiles`
-version: 1.0.0-beta.1
+version: 1.0.0-beta.2
 
 This repo is my collection of dotfiles that I use across setups (like personal and work computers).
 It's based on and heavily influenced on a number of other people's work (referenced in [credits](#credits)).
@@ -28,7 +28,7 @@ With all that said, these are the topics currently available:
 - `ssh`: for "global" SSH configuration that I wanna have.
 - `vim`: for my Vim configuration.
 - `oh-my-zsh`: for my custom theme and the home of the `custom` folder with my aliases, functions and plugins.
-- `zsh`: for my Zsh configration.
+- `zsh`: for my Zsh configuration.
 
 ### npm
 There is also a step that will install npm binaries globally (like `rimraf` which I use all the time). The list for this is in `install.conf.yaml`.

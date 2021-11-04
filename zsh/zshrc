@@ -7,7 +7,7 @@ export DOTFILES="$HOME/.dotfiles"
 # If you come from bash you might have to change your $PATH.
 # Done fancy, because we can: https://stackoverflow.com/a/18077919/1053777
 #export PATH=$HOME/bin:/usr/local/bin:$DOTFILES/bin:$PATH
-path=("$HOME/bin" "/usr/local/bin" "$DOTFILES/bin" "$path")
+path=("$HOME/bin" "/usr/local/bin" "$DOTFILES/bin" $path)
 export PATH
 
 # Source shell files in .dotfiles/shell
