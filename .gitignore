@@ -6,3 +6,6 @@
 *.iml
 out
 gen
+
+# Ignore compiled python scripts
+dotbot-plugins/*.pyc
