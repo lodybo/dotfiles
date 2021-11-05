@@ -22,5 +22,10 @@
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
-    - [sh ./macos/set-defaults.sh, Setting up sensible Mac defaults]
+    -
+      command: sh ./macos/set-defaults.sh
+      description: Setting up sensible Mac defaults
+      stdin: true
+      stdout: true
+      stderr: true
     - [sh ./macos/install-homebrew.sh, Installing Homebrew]
