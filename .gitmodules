@@ -8,3 +8,6 @@
 [submodule "oh-my-zsh/custom/plugins/zsh-syntax-highlighting"]
 	path = oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+[submodule "vim/vim/pack/git-plugins/start/ale"]
+	path = vim/vim/pack/git-plugins/start/ale
+	url = https://github.com/dense-analysis/ale.git
