@@ -6,9 +6,14 @@ export DOTFILES="$HOME/.dotfiles"
 
 # If you come from bash you might have to change your $PATH.
 # Done fancy, because we can: https://stackoverflow.com/a/18077919/1053777
-#export PATH=$HOME/bin:/usr/local/bin:$DOTFILES/bin:$PATH
 path=("$HOME/bin" "/usr/local/bin" "$DOTFILES/bin" $path)
 export PATH
+
+# Set the fpath
+fpath=("$DOTFILES/oh-my-zsh/func" $fpath)
+
+# Initialize completion system
+compinit
 
 # Source shell files in .dotfiles/shell
 for file in $DOTFILES/shell/*(.);
@@ -18,7 +23,7 @@ done
 
 # Load in macOS aliases if we are on macOS
 if [[ "$OSTYPE" == "darwin"* ]]; then
-    source "$DOTFILES/oh-my-zsh/aliases-macos.zsh"
+    source "$DOTFILES/oh-my-zsh/macos/aliases-macos.zsh"
 fi
 
 # Set name of the theme to load --- if set to "random", it will
