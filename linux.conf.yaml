@@ -3,7 +3,14 @@
       create: true
       relink: true
 
+- create:
+    - ~/bin
+
 - link:
+    ~/bin/bat:
+      path: bin/bat-linux
+    ~/bin/exa:
+      path: bin/exa-linux
     ~/.zshrc:
       force: true
       path: zsh/zshrc
@@ -14,5 +21,3 @@
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
-    - [mv ./bin/bat-linux ./bin/bat, Moving bat binary]
-    - [mv ./bin/exa-linux ./bin/exa, Moving exa binary]
