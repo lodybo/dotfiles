@@ -13,6 +13,7 @@ export PATH
 fpath=("$DOTFILES/oh-my-zsh/func" $fpath)
 
 # Initialize completion system
+autoload -Uz compinit
 compinit
 
 # Source shell files in .dotfiles/shell
