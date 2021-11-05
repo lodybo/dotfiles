@@ -1,5 +1,5 @@
 # My `.dotfiles`
-version: 1.0.0-beta.2
+version: 1.0.0-beta.3
 
 This repo is my collection of dotfiles that I use across setups (like personal and work computers).
 It's based on and heavily influenced on a number of other people's work (referenced in [credits](#credits)).
@@ -121,7 +121,8 @@ They're marked below:
 * [anishathalye](https://github.com/anishathalye/dotfiles): because of his work on Dotbot and his [explanatory blog post](https://www.anishathalye.com/2014/08/03/managing-your-dotfiles/) which got this whole circus starting, and for some inspiration for my dotfiles.
 * [holman](https://github.com/holman/dotfiles): because dividing my dotfiles in topics seemed like a very good idea, and for some inspiration for my dotfiles.
 * [caarlos0](https://github.com/caarlos0/dotfiles): for inspiration for my dotfiles.
-* [zvory](https://github.com/zvory/dotfiles): for inspiration for my dotfiles and handling cross-platform binaries (like `bat` and `exa`).
+* [zvory](https://github.com/zvory/dotfiles): for inspiration for my dotfiles and handling cross-platform stuff.
+* [Mathias Bynens](https://github.com/mathiasbynens/dotfiles/): for inspiration for my dotfiles (especially the macOS part).
 
 Other people I want to credit for their contributions:
 * [amix](https://github.com/amix/vimrc): for a very concise Vim setup. I used the basic configuration.

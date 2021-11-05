@@ -16,6 +16,11 @@ do
   source "$file"
 done
 
+# Load in macOS aliases if we are on macOS
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    source "$DOTFILES/oh-my-zsh/aliases-macos.zsh"
+fi
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
