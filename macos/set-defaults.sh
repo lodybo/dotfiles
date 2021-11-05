@@ -10,7 +10,7 @@
 # Here we go.. ask for the administrator password upfront and run a
 # keep-alive to update existing `sudo` time stamp until script has finished
 sudo -v
-while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2›/dev/null &
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 # From Zach Holman (https://github.com/holman/dotfiles/blob/master/macos/install.sh)
 # There's a nifty command line interface to handle updates and installables in the Mac App Store, that we can use to just install everything, so
