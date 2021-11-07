@@ -7,9 +7,11 @@
     - ~/bin
 
 - link:
-    ~/bin/bat:
+    /usr/local/bin/bat:
+      force: true
       path: bin/bat-linux
-    ~/bin/exa:
+    /usr/local/bin/exa:
+      force: true
       path: bin/exa-linux
     ~/.zshrc:
       force: true
