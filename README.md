@@ -1,5 +1,5 @@
 # My `.dotfiles`
-version: 1.0.0
+version: 1.0.1
 
 This repo is my collection of dotfiles that I use across setups (like personal and work computers).
 It's based on and heavily influenced on a number of other people's work (referenced in [credits](#credits)).
@@ -62,10 +62,10 @@ We'll start with the lite install
 The first step is to install these dependencies before we can go any further:
 ```shell
 # Update packages
-apt update -y
+apt update
 
 # Install needed stuff
-apt install git curl python
+apt install -y git curl python
 ```
 
 ### Cloning this repo
@@ -90,9 +90,9 @@ If we want to set up the Linux or MacOS version (the "full" one), we need to ins
 We can run the following commands for that:
 
 ```shell
-apt update -y
+apt update
 
-apt install git curl python zsh
+apt install -y git curl python zsh
 
 # Install Oh My Zsh and nvm beforehand so that we can restart the shell.
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
