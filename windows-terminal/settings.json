@@ -36,7 +36,7 @@
     "defaults":
     {
       "acrylicOpacity": 0.90000000000000002,
-      "colorScheme": "Solarized Dark",
+      "colorScheme": "One Half Dark",
       "cursorShape": "bar",
       "font":
       {
@@ -49,7 +49,7 @@
     "list":
     [
       {
-        "colorScheme": "Solarized Dark",
+        "colorScheme": "One Half Dark",
         "font":
         {
           "face": "Fira Code"
