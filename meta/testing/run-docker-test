@@ -2,8 +2,8 @@
 
 # Build test container
 echo ""
-echo "Building Docker container..."
-docker build . -t dotfiles-test
+echo "Building Docker container, with the whole repo as context"
+docker build ../../ -f ./Dockerfile -t dotfiles-test
 
 echo ""
 echo "Build done, starting container..."

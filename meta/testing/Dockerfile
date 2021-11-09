@@ -13,7 +13,7 @@ RUN echo 'tester:tester' | chpasswd
 USER tester
 WORKDIR /home/tester
 
-COPY --chown=tester:root ../.. /home/tester/.dotfiles
+COPY --chown=tester:root . /home/tester/.dotfiles
 
 RUN cd /home/tester
 RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
