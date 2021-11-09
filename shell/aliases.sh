@@ -17,5 +17,6 @@ alias nlg='npm -g list'
 
 # Miscellaneous
 alias grep='grep --color'
-alias edit_bashrc='${EDITOR} ~/.bashrc'
+alias edit_bashrc='${EDITOR} ~/.bashrc_local'
+alias edit_dotfiles_bashrc='${EDITOR} $DOTFILES/bash/bashrc'
 alias restart_bash='clear && exec bash --login'
