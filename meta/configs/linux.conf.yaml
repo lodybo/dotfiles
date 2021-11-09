@@ -4,19 +4,18 @@
       relink: true
 
 - create:
-    - ~/Pictures/Screenshots
     - ~/bin
 
 - link:
     /usr/local/bin/bat:
       force: true
-      path: bin/bat-macos
+      path: ../../bin/bat-linux
     /usr/local/bin/exa:
       force: true
-      path: bin/exa-macos
+      path: ../../bin/exa-linux
     ~/.zshrc:
       force: true
-      path: zsh/zshrc
+      path: ../../zsh/zshrc
 
 - npm:
     - rimraf
@@ -24,10 +23,3 @@
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
-    -
-      command: sh ./macos/set-defaults.sh
-      description: Setting up sensible Mac defaults
-      stdin: true
-      stdout: true
-      stderr: true
-    - [sh ./macos/install-homebrew.sh, Installing Homebrew]

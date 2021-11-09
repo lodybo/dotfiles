@@ -1,0 +1,33 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+
+- create:
+    - ~/Pictures/Screenshots
+    - ~/bin
+
+- link:
+    /usr/local/bin/bat:
+      force: true
+      path: ../../bin/bat-macos
+    /usr/local/bin/exa:
+      force: true
+      path: ../../bin/exa-macos
+    ~/.zshrc:
+      force: true
+      path: ../../zsh/zshrc
+
+- npm:
+    - rimraf
+    - npm-check
+
+- shell:
+    - [git submodule update --init --recursive, Installing submodules]
+    -
+      command: sh ../../macos/set-defaults.sh
+      description: Setting up sensible Mac defaults
+      stdin: true
+      stdout: true
+      stderr: true
+    - [sh ../../macos/install-homebrew.sh, Installing Homebrew]
