@@ -17,6 +17,9 @@
     ~/.zshrc:
       force: true
       path: zsh/zshrc
+    ~/Library/Application Support/Hyper/.hyper.js:
+      force: true
+      path: macos/hyper.js
 
 - npm:
     - rimraf
