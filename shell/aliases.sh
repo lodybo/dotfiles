@@ -7,8 +7,7 @@ alias lsa='ls -lah'
 # Git
 alias gb='git branch'
 alias gs='git status'
-alias glo='git log --oneline -n5'
-alias glon='git log --oneline -n$1'
+alias glo='glon 5'
 alias gll='git log --graph --pretty=oneline --abbrev-commit'
 
 # npm
