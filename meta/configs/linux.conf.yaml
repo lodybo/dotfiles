@@ -9,13 +9,13 @@
 - link:
     /usr/local/bin/bat:
       force: true
-      path: ../../bin/bat-linux
+      path: bin/bat-linux
     /usr/local/bin/exa:
       force: true
-      path: ../../bin/exa-linux
+      path: bin/exa-linux
     ~/.zshrc:
       force: true
-      path: ../../zsh/zshrc
+      path: zsh/zshrc
 
 - npm:
     - rimraf
