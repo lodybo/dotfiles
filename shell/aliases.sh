@@ -12,8 +12,8 @@ alias glon='git log --oneline -n$1'
 alias gll='git log --graph --pretty=oneline --abbrev-commit'
 
 # npm
-alias nl='npm list --depth=0'
-alias nlg='npm -g list --depth=0'
+alias nl='npm list'
+alias nlg='npm -g list'
 
 # Miscellaneous
 alias grep='grep --color'

@@ -14,11 +14,10 @@
     ~/.vim: vim/vim
     ~/.vimrc:
       path: vim/vimrc
-    ~/.npmrc:
-      path: npm/npmrc
     ~/.bashrc:
       force: true
       path: bash/bashrc
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
+    - [sh ./npm/set-defaults.sh, Setting up sane npm defaults]
