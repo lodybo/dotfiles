@@ -32,15 +32,25 @@ osascript -e 'tell application "System Preferences" to quit'
 
 echo "General settings"
 echo ""
+
+# Set computer name
 echo "  › Would you like to set your computer name (as done via System Preferences ›› Sharing)?  (y/n)"
 read -r response
-if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
+if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
   echo "What would you like it to be?"
   read -r COMPUTER_NAME
   sudo scutil --set ComputerName "$COMPUTER_NAME"
   sudo scutil --set HostName "$COMPUTER_NAME"
   sudo scutil --set LocalHostName "$COMPUTER_NAME"
   sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "$COMPUTER_NAME"
+fi
+unset "$response"
+
+# Enable touch ID for shell elevation
+echo "  › Would you like to set up touch ID for shell elevation? (Requires password) (y/n)"
+read -r response
+if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+  sh curl -sL https://gist.githubusercontent.com/RichardBronosky/31660eb4b0f0ba5e673b9bc3c9148a70/raw/touchid_sudo.sh | zsh
 fi
 
 # disable keyboard press and hold popup
