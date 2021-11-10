@@ -7,10 +7,10 @@
     - ~/bin
 
 - link:
-    /usr/local/bin/bat:
+    ~/bin/bat:
       force: true
       path: bin/bat-linux
-    /usr/local/bin/exa:
+    ~/bin/exa:
       force: true
       path: bin/exa-linux
     ~/.zshrc:
@@ -23,3 +23,8 @@
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
+    -
+      command: sh ./npm/set-defaults.sh
+      description: Setting up sane npm defaults
+      stout: true
+      sterr: true

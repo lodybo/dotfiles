@@ -31,7 +31,7 @@ With all that said, these are the topics currently available:
 - `zsh`: for my Zsh configuration.
 
 ### npm
-There is also a step that will install npm binaries globally (like `rimraf` which I use all the time). The list for this is in `install.conf.yaml`.
+There is also a step that will install npm binaries globally (like `rimraf` which I use all the time). The list for this is in `linux.conf.yaml` and `macos.conf.yaml`.
 
 ## Configurations
 This repo is set up with the ability to run multiple configurations. This is so that can have a "layered" setup. I can determine which config I want to run during install

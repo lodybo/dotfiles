@@ -20,4 +20,3 @@
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
-    - [sh ./npm/set-defaults.sh, Setting up sane npm defaults]

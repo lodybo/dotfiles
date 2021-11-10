@@ -8,10 +8,10 @@
     - ~/bin
 
 - link:
-    /usr/local/bin/bat:
+    ~/bin/bat:
       force: true
       path: bin/bat-macos
-    /usr/local/bin/exa:
+    ~/bin/exa:
       force: true
       path: bin/exa-macos
     ~/.zshrc:
@@ -34,3 +34,8 @@
       stdout: true
       stderr: true
     - [sh ./macos/install-homebrew.sh, Installing Homebrew]
+    -
+      command: sh ./npm/set-defaults.sh
+      description: Setting up sane npm defaults
+      stout: true
+      sterr: true
