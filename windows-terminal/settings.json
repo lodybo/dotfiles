@@ -301,6 +301,6 @@
       "yellow": "#808000"
     }
   ],
-  "startupActions": "--title \"TAF UI\" -d h:\\dev\\workspaces\\_front-end-architecture\\taf-ui-components\\packages\\taf-ui-core ; sp -H -d h:\\dev\\workspaces\\_front-end-architecture\\taf-ui-components\\packages\\taf-ui-core; nt --useApplicationTitle -d /home/lody",
+  "startupActions": "--title \"TAF UI\" -d h:\\dev\\workspaces\\_front-end-architecture\\taf-ui-components\\packages\\taf-ui-core ; sp -H -d h:\\dev\\workspaces\\_front-end-architecture\\taf-ui-components\\packages\\taf-ui-core; nt --useApplicationTitle -d \\\\wsl$\\Ubuntu-18.04_FromWSL1\\home\\lody",
   "theme": "dark"
 }

@@ -22,9 +22,11 @@ do
   source "$file"
 done
 
-# Load in macOS aliases if we are on macOS
+# Load in macOS aliases if we are on macOS, else load the Linux ones
 if [[ "$OSTYPE" == "darwin"* ]]; then
     source "$DOTFILES/oh-my-zsh/macos/aliases-macos.zsh"
+else
+    source "$DOTFILES/oh-my-zsh/linux/aliases-linux.zsh"
 fi
 
 # Set name of the theme to load --- if set to "random", it will
