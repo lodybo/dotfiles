@@ -17,3 +17,13 @@ glon()
   commits=$1
   git log --oneline -n"$commits"
 }
+
+# Update the current with the latest state of another branch
+git_update_to_latest()
+{
+  branch=$1
+  git checkout "$branch"
+  git pull
+  git checkout -
+  git merge "$branch"
+}

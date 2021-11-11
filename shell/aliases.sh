@@ -9,6 +9,7 @@ alias gb='git branch'
 alias gs='git status'
 alias glo='glon 5'
 alias gll='git log --graph --pretty=oneline --abbrev-commit'
+alias gu2l='git_update_to_latest'
 
 # npm
 alias nl='npm list'
