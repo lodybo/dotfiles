@@ -102,7 +102,7 @@ export NVM_LAZY_LOAD=true
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git zsh-nvm npm)
 if [[ "$OSTYPE" == "darwin"* ]]; then
-    plugins+=(osx)
+    plugins+=(macos)
 fi
 
 # Set OMZ update frequency (automatic, see more here: https://github.com/ohmyzsh/ohmyzsh#getting-updates)
