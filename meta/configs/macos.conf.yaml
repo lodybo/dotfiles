@@ -21,10 +21,6 @@
       force: true
       path: macos/hyper.js
 
-- npm:
-    - rimraf
-    - npm-check
-
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
     -
@@ -37,5 +33,6 @@
     -
       command: sh ./npm/set-defaults.sh
       description: Setting up sane npm defaults
-      stout: true
-      sterr: true
+      stdin: true
+      stdout: true
+      stderr: true

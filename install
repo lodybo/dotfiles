@@ -17,5 +17,5 @@ echo ""
 echo "Running Dotbot configs"
 for conf in "${DEFAULT_CONFIG_PREFIX}" "${@}"; do
   echo "Setting up ${conf} configuration"
-  "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -p dotbot-plugins/npm.py -c "${CONFIG_DIR}/${conf}${CONFIG_SUFFIX}"
+  "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG_DIR}/${conf}${CONFIG_SUFFIX}"
 done
