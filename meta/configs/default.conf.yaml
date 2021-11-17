@@ -20,3 +20,9 @@
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
+    -
+      command: sh ./shell/set-defaults.sh
+      description: Setting up sane defaults
+      stdin: true
+      stdout: true
+      stderr: true

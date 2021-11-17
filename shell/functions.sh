@@ -1,5 +1,23 @@
 # Shell functions
 
+############################################
+# Dotfiles
+############################################
+dotfiles_latest()
+{
+  dotfiles_version="$DOTFILES_VERSION"
+  dotfiles_latest_tag="$(git describe --tags --abbrev=0)"
+
+  echo "I investigated some version info, and found the following"
+  echo ""
+  echo "    Dotfiles current: $dotfiles_version"
+  echo "    Dotfiles latest: $dotfiles_latest_tag"
+  echo ""
+}
+
+############################################
+# Git
+############################################
 # Create git changelog, usage: 'changelog <last tag>'
 git_changelog() { git log --oneline --no-merges "$1"..HEAD; }
 
