@@ -6,7 +6,7 @@
 dotfiles_latest()
 {
   dotfiles_version="$DOTFILES_VERSION"
-  dotfiles_latest_tag="$(git describe --tags --abbrev=0)"
+  dotfiles_latest_tag="$(git -C "$DOTFILES" describe --tags --abbrev=0)"
 
   echo "I investigated some version info, and found the following"
   echo ""
