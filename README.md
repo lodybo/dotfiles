@@ -53,6 +53,13 @@ sets up some Mac specific settings and installs Homebrew.
 ### TAF
 The TAF set up is purely for my work pc at my office. It copies over the Windows Terminal configuration that I like.
 
+#### WSL2 Bridge
+WSL2 is a strange beast, in that it has a fully virtualized network adapter. This means that I can access any localhost servers on my machine,
+but other in my network can't. Luckily, [Alex-D has a bridge script](https://github.com/Alex-D/dotfiles#wsl-bridge) which opens up some ports by default.
+If a port needs to be added, just change the script and run `wslb` or `wslbridge`.
+
+After a first install, you might need to run the `start-powershell.ps1` script (as an administrator). This sets everything up for the first time.
+
 ## Getting up and running
 In order to set all of this up you need to have a system set up running the following:
 - git
@@ -131,6 +138,7 @@ They're marked below:
 * [caarlos0](https://github.com/caarlos0/dotfiles): for inspiration for my dotfiles.
 * [zvory](https://github.com/zvory/dotfiles): for inspiration for my dotfiles and handling cross-platform stuff.
 * [Mathias Bynens](https://github.com/mathiasbynens/dotfiles/): for inspiration for my dotfiles (especially the macOS part).
+* [Alex-D](https://github.com/Alex-D/dotfiles): for the WSL2 bridge script.
 
 Other people I want to credit for their contributions:
 * [amix](https://github.com/amix/vimrc): for a very concise Vim setup. I used the basic configuration.

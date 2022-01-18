@@ -1,2 +1,3 @@
 - shell:
     - [cp ./windows-terminal/settings.json /mnt/c/Users/l.borgers/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json, Copying Windows Terminal settings]
+    - [cp ./wsl/wsl2-bridge.ps1 /mnt/c/Users/l.borgers/wsl2-bridge.ps1, Copying the WSL2 Bridge script]
