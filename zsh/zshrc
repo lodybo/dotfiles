@@ -29,6 +29,11 @@ else
     source "$DOTFILES/oh-my-zsh/linux/aliases-linux.zsh"
 fi
 
+# Load the TAF aliases if we're on WSL
+if [[ -n "$IS_WSL" || -n "$WSL_DISTRO_NAME" ]]; then
+  source "$DOTFILES/oh-my-zsh/taf/aliases-taf.zsh"
+fi
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
