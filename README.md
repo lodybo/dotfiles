@@ -1,7 +1,7 @@
 # My `.dotfiles`
 version: 1.4.0
 
-This repo is my collection of dotfiles that I use across setups (like personal and work computers).
+This repo is my collection of dotfiles that I use across setups (like personal and work computers). It provides a sensible default for my work environment.
 It's based on and heavily influenced on a number of other people's work (referenced in [credits](#credits)).
 
 This repository is managed by [Dotbot](https://github.com/anishathalye/dotbot) which helps me install everything on each computer I work with.
@@ -49,9 +49,6 @@ adding their aliases, installing and configuring Zsh and Oh My Zsh, adding Zsh-r
 ### MacOS / full
 The MacOS (also "full") set up does a lot of the things the linux install does (but then obviously set up for a mac), but it also sets up the `osx` plugin in OMZ,
 sets up some Mac specific settings and installs Homebrew.
-
-### TAF
-The TAF set up is purely for my work pc at my office. It copies over the Windows Terminal configuration that I like.
 
 ## Getting up and running
 In order to set all of this up you need to have a system set up running the following:
@@ -115,11 +112,6 @@ cd .dotfiles
 ./install linux
 # or
 ./install macos
-```
-
-The TAF configuration can be "stacked" to other configurations.
-```shell
-./install linux taf
 ```
 
 ## Credits

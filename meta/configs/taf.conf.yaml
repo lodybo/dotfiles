@@ -1,2 +1,0 @@
-- shell:
-    - [cp ./windows-terminal/settings.json /mnt/c/Users/l.borgers/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json, Copying Windows Terminal settings]
