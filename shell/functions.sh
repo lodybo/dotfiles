@@ -40,8 +40,6 @@ glon()
 git_update_to_latest()
 {
   branch=$1
-  git checkout "$branch"
-  git pull
-  git checkout -
+  git fetch origin "$branch":"$branch"
   git merge "$branch"
 }
