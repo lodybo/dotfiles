@@ -30,7 +30,7 @@
   ],
   "copyFormatting": "none",
   "copyOnSelect": false,
-  "defaultProfile": "{e8e70e36-4232-5a3e-a1d6-756238c59f47}",
+  "defaultProfile": "{01ccbab7-13f1-4687-8ce7-35870b70c7ef}",
   "profiles":
   {
     "defaults":
@@ -49,21 +49,11 @@
     "list":
     [
       {
-        "colorScheme": "One Half Dark",
-        "font":
-        {
-          "face": "Fira Code"
-        },
-        "guid": "{e8e70e36-4232-5a3e-a1d6-756238c59f47}",
-        "hidden": false,
-        "name": "Ubuntu-18.04",
-        "source": "Windows.Terminal.Wsl"
-      },
-      {
-        "guid": "{c6eaf9f4-32a7-5fdc-b5cf-066e8a4b1e40}",
-        "hidden": false,
-        "name": "Ubuntu-18.04 (WSL2)",
-        "source": "Windows.Terminal.Wsl"
+        "commandline": "wsl.exe -d Ubuntu",
+        "guid": "{01ccbab7-13f1-4687-8ce7-35870b70c7ef}",
+        "icon": "ms-appx:///ProfileIcons/{9acb9455-ca41-5af7-950f-6bca1bc9722f}.png",
+        "name": "Ubuntu",
+        "startingDirectory": "\\\\wsl$\\Ubuntu\\home\\lody"
       },
       {
         "commandline": "powershell.exe",
@@ -76,18 +66,6 @@
         "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
         "hidden": false,
         "name": "Command Prompt"
-      },
-      {
-        "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
-        "hidden": true,
-        "name": "Azure Cloud Shell",
-        "source": "Windows.Terminal.Azure"
-      },
-      {
-        "guid": "{2ece5bfe-50ed-5f3a-ab87-5cd4baafed2b}",
-        "hidden": false,
-        "name": "Git Bash",
-        "source": "Git"
       }
     ]
   },
@@ -301,6 +279,6 @@
       "yellow": "#808000"
     }
   ],
-  "startupActions": "--title \"TAF UI\" -d h:\\dev\\workspaces\\_front-end-architecture\\taf-ui-components\\packages\\taf-ui-core ; sp -H -d h:\\dev\\workspaces\\_front-end-architecture\\taf-ui-components\\packages\\taf-ui-core; nt --useApplicationTitle -d \\\\wsl$\\Ubuntu-18.04_FromWSL1\\home\\lody",
+  "startupActions": "--title \"TAF UI\" -d /home/lody/dev/components/packages/taf-ui-core ; sp -H -d /home/lody/dev/components/packages/taf-ui-core; nt --useApplicationTitle -d \\\\wsl$\\Ubuntu\\home\\lody",
   "theme": "dark"
 }
