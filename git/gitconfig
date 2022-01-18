@@ -44,7 +44,7 @@
   tool = vimdiff
 
 [core]
-	autocrlf = input
+	autocrlf = true
 
 [include]
 	path = ~/.gitconfig_local
