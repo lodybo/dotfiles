@@ -1,5 +1,5 @@
 # My `.dotfiles`
-version: 1.5.1
+version: 1.6.0
 
 This repo is my collection of dotfiles that I use across setups (like personal and work computers).
 It's based on and heavily influenced on a number of other people's work (referenced in [credits](#credits)).
@@ -46,8 +46,8 @@ This set up is exceptionally handy on servers!
 The linux (or "full") set up builds on the default one. All the settings mentioned above are happening, but this config expands by moving the linux binaries of `bat` and `exa` into the `PATH`,
 adding their aliases, installing and configuring Zsh and Oh My Zsh, adding Zsh-related functions and installing/configuring `nvm`.
 
-### MacOS / full
-The MacOS (also "full") set up does a lot of the things the linux install does (but then obviously set up for a mac), but it also sets up the `osx` plugin in OMZ,
+### macOS / full
+The macOS (also "full") set up does a lot of the things the linux install does (but then obviously set up for a mac), but it also sets up the `osx` plugin in OMZ,
 sets up some Mac specific settings and installs Homebrew.
 
 ### TAF
@@ -58,7 +58,17 @@ WSL2 is a strange beast, in that it has a fully virtualized network adapter. Thi
 but other in my network can't. Luckily, [Alex-D has a bridge script](https://github.com/Alex-D/dotfiles#wsl-bridge) which opens up some ports by default.
 If a port needs to be added, just change the script and run `wslb` or `wslbridge`.
 
-After a first install, you might need to run the `start-powershell.ps1` script (as an administrator). This sets everything up for the first time.
+When running the config, it will copy the boot script `wsl/rc_local` into `/etc/` on the WSL machine. This script, which is run on every boot of the WSL VM,
+runs the WSL Bridge script. It will set up the ports automatically. However, when we run this install, WSL is already running. So in that case we just need to run the alias `wslb` or `wslbridge`.
+
+#### WSL2 and IP's
+WSL2 is using a full on network interface to communicate with. This means that local servers in WSL2 can be accessed with the (special) `localhost` hostname,
+or you can use the direct IP address of the WSL2 interface. In combination with the port bridging functionality described above, we can connect to a server running in WSL2 through the
+WSL2 IP and port number.
+
+And since those ports are bridged, you can connect to the server running in WSL2 by connecting to the IP address of the computer. You'd have to use the IP address from the **Windows** laptop for that.
+To get both IP's, run `local_ips`. Normally the first IP is the Windows one (you can use this to connect a smartphone to the server running in WSL2),
+and the second one is the WSL2 interface (which you can use on the current laptop to directly connect to WSL2 with).
 
 ## Getting up and running
 In order to set all of this up you need to have a system set up running the following:
@@ -95,8 +105,8 @@ cd .dotfiles
 ./install
 ```
 
-### Installing the Linux version or MacOS version
-If we want to set up the Linux or MacOS version (the "full" one), we need to install Zsh, Oh My Zsh and nvm.
+### Installing the Linux version or macOS version
+If we want to set up the Linux or macOS version (the "full" one), we need to install Zsh, Oh My Zsh and nvm.
 We can run the following commands for that:
 
 ```shell
@@ -139,6 +149,7 @@ They're marked below:
 * [zvory](https://github.com/zvory/dotfiles): for inspiration for my dotfiles and handling cross-platform stuff.
 * [Mathias Bynens](https://github.com/mathiasbynens/dotfiles/): for inspiration for my dotfiles (especially the macOS part).
 * [Alex-D](https://github.com/Alex-D/dotfiles): for the WSL2 bridge script.
+* [Shayne](https://github.com/shayne/wsl2-hacks/blob/master/README.md): for some WSL hacks (the `rc.local` boot script, and copying IP's).
 
 Other people I want to credit for their contributions:
 * [amix](https://github.com/amix/vimrc): for a very concise Vim setup. I used the basic configuration.
