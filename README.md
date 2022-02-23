@@ -1,5 +1,5 @@
 # My `.dotfiles`
-version: 1.6.0
+version: 1.6.1
 
 This repo is my collection of dotfiles that I use across setups (like personal and work computers).
 It's based on and heavily influenced on a number of other people's work (referenced in [credits](#credits)).
@@ -58,8 +58,14 @@ WSL2 is a strange beast, in that it has a fully virtualized network adapter. Thi
 but other in my network can't. Luckily, [Alex-D has a bridge script](https://github.com/Alex-D/dotfiles#wsl-bridge) which opens up some ports by default.
 If a port needs to be added, just change the script and run `wslb` or `wslbridge`.
 
-When running the config, it will copy the boot script `wsl/rc_local` into `/etc/` on the WSL machine. This script, which is run on every boot of the WSL VM,
-runs the WSL Bridge script. It will set up the ports automatically. However, when we run this install, WSL is already running. So in that case we just need to run the alias `wslb` or `wslbridge`.
+There is a boot script called `wsl/rc_local` which can be copied into `/etc/rc.local` (note the rename!) on the WSL machine. This script, which will be run on every boot of the WSL VM, runs the WSL Bridge script. It will set up the ports automatically. You can copy it as root user:
+
+```shell
+sudo cp $DOTFILES/wsl/rc_local /etc/rc.local
+```
+
+You need to run this manually, since the install cannot do that (because of permissions).
+Also, when we run this install, WSL is already running. So in that case we just need to run the alias `wslb` or `wslbridge`.
 
 #### WSL2 and IP's
 WSL2 is using a full on network interface to communicate with. This means that local servers in WSL2 can be accessed with the (special) `localhost` hostname,
