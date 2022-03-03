@@ -1,5 +1,8 @@
 # Default aliases
 
+# Dotfiles
+alias DOTFILES_VERSION='dotfiles_latest'
+
 # ls
 alias ls='ls -G'
 alias lsa='ls -lah'

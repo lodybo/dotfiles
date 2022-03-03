@@ -5,13 +5,20 @@
 ############################################
 dotfiles_latest()
 {
-  dotfiles_version="$DOTFILES_VERSION"
-  dotfiles_latest_tag="$(git -C "$DOTFILES" describe --tags --abbrev=0)"
+  dotfiles_version=$(git -C "$DOTFILES" tag --list | awk '{print $0}' | awk '{t=$0} END{print t}')
+  dotfiles_latest_tag="$(git ls-remote --tags https://github.com/lodybo/dotfiles.git | awk '{print $2}' | awk -F/ '{print $3}' | awk '{t=$0} END{print t}')"
+  upgrade_instructions="It seems like you're fine, Lody."
 
-  echo "I investigated some version info, and found the following"
+  if [[ "$dotfiles_version" != "$dotfiles_latest_tag" ]]; then
+    upgrade_instructions="There's a newer version available, please update!"
+  fi
+
+  echo "I investigated some version info, and found the following:"
   echo ""
   echo "    Dotfiles current: $dotfiles_version"
   echo "    Dotfiles latest: $dotfiles_latest_tag"
+  echo ""
+  echo "$upgrade_instructions"
   echo ""
 }
 
