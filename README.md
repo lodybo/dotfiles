@@ -1,6 +1,4 @@
 # My `.dotfiles`
-version: 1.6.1
-
 This repo is my collection of dotfiles that I use across setups (like personal and work computers).
 It's based on and heavily influenced on a number of other people's work (referenced in [credits](#credits)).
 
