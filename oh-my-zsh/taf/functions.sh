@@ -4,8 +4,17 @@
 # Dotfiles
 ############################################
 local_ips() {
-  # Get both IP's
-  ips=$(ipconfig | awk "/IPv4/ {print $4}" | grep -E -o "([0-9]{1,3}[\.]){3}[0-9]{1,3}");
+  # Get the IP's from WSL itself, the virtual Ethernet adapter of WSL and of the Windows laptop
+  wsl="$(hostname -I)"
+  wsl_virt=$(powershell '(Get-NetIPAddress -AddressFamily IPv4 -InterfaceAlias "vEthernet (WSL)").IPAddress')
+  win="$(powershell "(Get-NetIPAddress -AddressFamily IPv4 -InterfaceAlias Wi-Fi).IPAddress")"
 
-  echo "${ips}";
+  echo "";
+  echo "Local IP information";
+  echo "----------------------------------------";
+  echo -e "WSL              \t $wsl";
+  echo -e "WSL (virtual eth)\t $wsl_virt";
+  echo -e "Windows          \t $win";
+  echo "----------------------------------------";
+  echo "";
 }
