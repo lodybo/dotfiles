@@ -112,10 +112,28 @@ cd .dotfiles
 ./install macos
 ```
 
-## macOS
+## macOS and ITerm2
 On macOS I'm using ITerm2. Some of the configurations are loaded inside the dotfiles repo, but that also means that we need to sync it with the ITerm2 instance on the machine.
 I'm following the guidelines found here: https://shyr.io/blog/sync-iterm2-configs.
 Basically it says that we need to enable both options in the **General** > **Preferences** section.
+
+### SSH profiles
+My default ITerm2 profile is based on the Nord colorscheme. However, when I use `ssh` (for example to connect to a production server),
+ITerm2 will automatically switch themes. This will alert me and tell me that I'm currently in the _Danger Zone_.
+
+The switch is being done based on a list of hosts that is stored in the `DOTFILES_ITERM_SSH_PROFILES` variable.
+In order to add a host to that list, do something like this in one of the startup scripts (preferably `~/.zshrc_local`):
+
+```shell
+DOTFILES_ITERM_SSH_PROFILES="$DOTFILES_ITERM_SSH_PROFILES|lodybo.nl"
+```
+
+I used the zsh code found [here](https://github.com/hectorleiva/iterm2-ssh-color-scheme).
+
+For a list of themes to change to, check out: https://iterm2colorschemes.com.
+
+It's possible to go nuts with this, for example selecting a theme based on certain servers. Production servers could be red, staging servers could be purple.
+For more ideas, read this post: https://coderwall.com/p/t7a-tq/change-terminal-color-when-ssh-from-os-x.
 
 ## Credits
 Like mentioned earlier, my dotfiles are heavily influenced/based on other people's dotfiles repositories.
