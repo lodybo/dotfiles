@@ -48,9 +48,6 @@ adding their aliases, installing and configuring Zsh and Oh My Zsh, adding Zsh-r
 The macOS (also "full") set up does a lot of the things the linux install does (but then obviously set up for a mac), but it also sets up the `osx` plugin in OMZ,
 sets up some Mac specific settings and installs Homebrew.
 
-### TAF
-The TAF set up is purely for my work pc at my office. It copies over the Windows Terminal configuration that I like.
-
 #### WSL2 Bridge
 WSL2 is a strange beast, in that it has a fully virtualized network adapter. This means that I can access any localhost servers on my machine,
 but other in my network can't. Luckily, [Alex-D has a bridge script](https://github.com/Alex-D/dotfiles#wsl-bridge) which opens up some ports by default.
@@ -129,11 +126,6 @@ cd .dotfiles
 ./install linux
 # or
 ./install macos
-```
-
-The TAF configuration can be "stacked" to other configurations.
-```shell
-./install linux taf
 ```
 
 ## Credits
