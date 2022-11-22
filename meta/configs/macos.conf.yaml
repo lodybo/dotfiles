@@ -17,9 +17,6 @@
     ~/.zshrc:
       force: true
       path: zsh/zshrc
-    ~/Library/Application Support/Hyper/.hyper.js:
-      force: true
-      path: macos/hyper.js
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]

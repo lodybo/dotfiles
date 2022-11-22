@@ -48,22 +48,6 @@ adding their aliases, installing and configuring Zsh and Oh My Zsh, adding Zsh-r
 The macOS (also "full") set up does a lot of the things the linux install does (but then obviously set up for a mac), but it also sets up the `osx` plugin in OMZ,
 sets up some Mac specific settings and installs Homebrew.
 
-#### WSL2 Bridge
-WSL2 is a strange beast, in that it has a fully virtualized network adapter. This means that I can access any localhost servers on my machine,
-but other in my network can't. Luckily, [Alex-D has a bridge script](https://github.com/Alex-D/dotfiles#wsl-bridge) which opens up some ports by default.
-If a port needs to be added, just change the script and run `wslb` or `wslbridge`.
-
-Also, when we run this install, WSL is already running. So in that case we just need to run the alias `wslb` or `wslbridge`.
-
-#### WSL2 and IP's
-WSL2 is using a full on network interface to communicate with. This means that local servers in WSL2 can be accessed with the (special) `localhost` hostname,
-or you can use the direct IP address of the WSL2 interface. In combination with the port bridging functionality described above, we can connect to a server running in WSL2 through the
-WSL2 IP and port number.
-
-And since those ports are bridged, you can connect to the server running in WSL2 by connecting to the IP address of the computer. You'd have to use the IP address from the **Windows** laptop for that.
-To get both IP's, run `local_ips`. Normally the first IP is the Windows one (you can use this to connect a smartphone to the server running in WSL2),
-and the second one is the WSL2 interface (which you can use on the current laptop to directly connect to WSL2 with).
-
 ## Getting up and running
 In order to set all of this up you need to have a system set up running the following:
 - git
@@ -127,6 +111,11 @@ cd .dotfiles
 # or
 ./install macos
 ```
+
+## macOS
+On macOS I'm using ITerm2. Some of the configurations are loaded inside the dotfiles repo, but that also means that we need to sync it with the ITerm2 instance on the machine.
+I'm following the guidelines found here: https://shyr.io/blog/sync-iterm2-configs.
+Basically it says that we need to enable both options in the **General** > **Preferences** section.
 
 ## Credits
 Like mentioned earlier, my dotfiles are heavily influenced/based on other people's dotfiles repositories.
