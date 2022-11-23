@@ -1,0 +1,8 @@
+tap "homebrew/bundle"
+tap "homebrew/core"
+brew "dos2unix"
+brew "flyctl"
+brew "imagemagick"
+brew "libpq"
+brew "pam-reattach"
+brew "inetutils"

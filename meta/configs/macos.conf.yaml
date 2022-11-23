@@ -26,7 +26,7 @@
       stdin: true
       stdout: true
       stderr: true
-    - [sh ./macos/install-homebrew.sh, Installing Homebrew]
+    - [sh ./macos/install-homebrew.sh, Installing and configuring Homebrew]
     -
       command: sh ./npm/set-defaults.sh
       description: Setting up sane npm defaults
