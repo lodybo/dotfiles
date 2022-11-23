@@ -17,7 +17,7 @@ npm config -g set script-shell=/bin/bash
 
 # Install some global npm modules
 echo "  › Installing global npm modules"
-npm install --global \
+npm install --global --registry https://registry.npmjs.org \
   npm-check \
   rimraf \
   vtop
