@@ -50,3 +50,46 @@ git_update_to_latest()
   git fetch origin "$branch":"$branch"
   git merge "$branch"
 }
+
+############################################
+# Misc
+############################################
+# Run a cheat sheet for terminal commands.
+# Powered by http://cheat.sh
+cheat() {
+  # Trim output of args because we want to check if '-h' was passed
+  query=$1
+
+  # Check whether '-h' is passed and if so, query the help command
+  if [[ "$query" == "-h" ]]
+  then
+    # Curl for help
+    curl cheat.sh/:help
+  else
+    # Curl cheat sheet
+    curl cheat.sh/"$query"
+  fi
+}
+
+# Print a QR code of a URL (or something else)
+# Powered by http://qrenco.de
+qrify() {
+  query=$1
+
+  printf "\n"
+  echo "Printing QR code for $query:"
+  printf "\n"
+  curl qrenco.de/"$query"
+  printf "\n"
+}
+
+# Print localised weather info, optionally with location param
+# Taken from: https://www.jamieonkeys.dev/posts/calendar-and-weather-in-terminal/
+weather() {
+  if [ $# -eq 0 ] # If no argument has been passed to this function
+    then
+      curl wttr.in
+    else
+      curl wttr.in/"$1" # Append location
+  fi
+}
