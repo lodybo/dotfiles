@@ -46,5 +46,8 @@
 [core]
 	autocrlf = true
 
+[push]
+  autoSetupRemote = true
+
 [include]
 	path = ~/.gitconfig_local
