@@ -21,14 +21,14 @@ function tab-reset() {
 }
 
 function colorssh() {
-    if [[ -n "$ITERM_SESSION_ID" ]]; then
-        trap "tab-reset" INT EXIT
-        # shellcheck disable=SC2076
-        if [[ "$*" =~ $DOTFILES_ITERM_SSH_PROFILES ]]; then
-            tabc SSH
-        fi
-    fi
-    ssh "$*"
+  if [[ -n "$ITERM_SESSION_ID" ]]; then
+      trap "tab-reset" INT EXIT
+      # shellcheck disable=SC2076
+      if [[ "$*" =~ $DOTFILES_ITERM_SSH_PROFILES ]]; then
+          tabc SSH
+      fi
+  fi
+  ssh "$@"
 }
 compdef _ssh tabc=ssh
 
