@@ -2,7 +2,7 @@
 
 set -e
 
-DEFAULT_CONFIG_PREFIX="default"
+DEFAULT_CONFIG_PREFIX="linux"
 CONFIG_SUFFIX=".conf.yaml"
 CONFIG_DIR="meta/configs"
 DOTBOT_DIR="dotbot"

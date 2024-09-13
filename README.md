@@ -32,29 +32,23 @@ With all that said, these are the topics currently available:
 There is also a step that will install npm binaries globally (like `rimraf` which I use all the time). The list for this is in `linux.conf.yaml` and `macos.conf.yaml`.
 
 ## Configurations
-This repo is set up with the ability to run multiple configurations. This is so that can have a "layered" setup. I can determine which config I want to run during install
-and set up my environment to my wishes.
+This repo is set up with the ability to run multiple configurations. It supports a Linux and macOS configuration, where the Linux configuration is set up for server maintanance and the macOS configuration is set up for workstations.
 
-### Default / Lite
-The default (or "lite") version sets up my aliases, functions, git config/templates, vim config and ssh config. It doesn't change the terminal (keeping it `bash`),
-doesn't set up Zsh or Oh My Zsh and adds a few binaries to the path but doesn't alias them.
-This set up is exceptionally handy on servers!
+### Linux
+The Linux configuration sets up aliases and functions that I use on a daily basis. It also installs `bat` and `exa` (which are replacements for `cat` and `ls` respectively). It also sets up the `bin` folder in the `PATH`.
+This setup is optimized for running on servers or k8s pods.
 
-### Linux / full
-The linux (or "full") set up builds on the default one. All the settings mentioned above are happening, but this config expands by moving the linux binaries of `bat` and `exa` into the `PATH`,
-adding their aliases, installing and configuring Zsh and Oh My Zsh, adding Zsh-related functions and installing/configuring `nvm`.
-
-### macOS / full
-The macOS (also "full") set up does a lot of the things the linux install does (but then obviously set up for a mac), but it also sets up the `osx` plugin in OMZ,
-sets up some Mac specific settings and installs Homebrew.
+### macOS
+The macOS set up does a lot of the things the linux install does (but then obviously set up for a mac), but it also installs some extra stuff. It installs the `nvm` (Node Version Manager) and sets up the latest LTS version of Node. It also
+sets up some Mac specific settings, installs Homebrew and configures Git.
 
 ## Getting up and running
 In order to set all of this up you need to have a system set up running the following:
 - git
 - curl (or wget)
-- python
+- python 3
 
-We'll start with the lite install
+Linux is the default, so if you don't specify anything, it will install the Linux version.
 
 ### Installing dependencies
 The first step is to install these dependencies before we can go any further:
@@ -63,7 +57,7 @@ The first step is to install these dependencies before we can go any further:
 apt update
 
 # Install needed stuff
-apt install -y git curl python
+apt install -y git curl python zsh
 ```
 
 ### Cloning this repo
@@ -74,52 +68,33 @@ cd ~
 git clone https://github.com/lodybo/dotfiles.git .dotfiles
 ```
 
-### Installing the Lite version
-The steps thus far are all we need in order to install the default / lite version of our `.dotfiles`.
-We can now `cd` into our folder and start the install script:
-
-```shell
-cd .dotfiles
-./install
-```
-
-### Installing the Linux version or macOS version
-If we want to set up the Linux or macOS version (the "full" one), we need to install Zsh, Oh My Zsh and nvm.
-We can run the following commands for that:
-
-```shell
-apt update
-
-apt install -y git curl python zsh
-
-# Install Oh My Zsh and nvm beforehand so that we can restart the shell.
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
-
-# Source nvm and install latest Node LTS
-. ~/.nvm/nvm.sh
-nvm install --lts
-```
-
-In order to run the configuration we need to specify that to our install script. It takes an argument like `linux` or `macos` (I wouldn't add them both).
+### Installing the Linux version
+If you want to set up the Linux, you can run the following commands:
 
 ```shell
 cd ~
 git clone https://github.com/lodybo/dotfiles.git .dotfiles
 cd .dotfiles
 ./install linux
-# or
+```
+
+## Installing the macOS version
+If you want to set up the macOS version, you need to install a few more things:
+- Xcode Command Line Tools
+- iTerm2
+
+Then you can run the following commands:
+
+```shell
+cd ~
+git clone https://github.com/lodybo/dotfiles.git .dotfiles
+cd .dotfiles
 ./install macos
 ```
 
-## macOS and ITerm2
-On macOS I'm using ITerm2. Some of the configurations are loaded inside the dotfiles repo, but that also means that we need to sync it with the ITerm2 instance on the machine.
-I'm following the guidelines found here: https://shyr.io/blog/sync-iterm2-configs.
-Basically it says that we need to enable both options in the **General** > **Preferences** section.
-
 ### SSH profiles
 My default ITerm2 profile is based on the Nord colorscheme. However, when I use `ssh` (for example to connect to a production server),
-ITerm2 will automatically switch themes. This will alert me and tell me that I'm currently in the _Danger Zone_.
+ITerm2 will automatically switch themes. This will alert me and tell me that I'm currently in the _Danger Zone_ for production servers, or the _Warning zone_ for slightly-less-but-still-important servers.
 
 The switch is being done based on a list of hosts that is stored in the `DOTFILES_ITERM_SSH_PROFILES` variable.
 In order to add a host to that list, do something like this in one of the startup scripts (preferably `~/.zshrc_local`):
