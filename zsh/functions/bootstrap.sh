@@ -1,0 +1,6 @@
+source './git.sh'
+source './exa.sh'
+source './misc.sh'
+source './docker.sh'
+source './history.sh'
+source './kubernetes.sh'

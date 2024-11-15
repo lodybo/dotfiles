@@ -1,0 +1,23 @@
+#####################################
+## Environment                     ##
+#####################################
+
+# How many commands zsh will load to memory.
+export HISTSIZE=10000
+
+# How many commands history will save on file.
+export SAVEHIST=10000
+
+# Date format for history timestamps.
+export HIST_STAMPS="yyyy-mm-dd"
+
+# Set the default editor.
+export EDITOR="vim"
+
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
+export SSH_AUTH_SOCK="~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock"
+export KUBE_EDITOR=vim
+
+export DOTFILES_ITERM_SSH_PROFILES="$DOTFILES_ITERM_SSH_PROFILES|detalentversneller.nl|letsleds.nl|staging.letsleds.nl|redis.letsleds.nlletsleds.de|letsleds.nl|bertusborgers.nl|naskady-local|naskady|lodybo-bastion|turkostabunita"

@@ -1,8 +1,10 @@
-# Shell functions
+#####################################
+## Miscellaneous                   ##
+#####################################
 
-############################################
-# Dotfiles
-############################################
+#############
+## Dotfiles ##
+#############
 dotfiles_latest()
 {
   dotfiles_version=$(git -C "$DOTFILES" tag --list | awk '{print $0}' | awk '{t=$0} END{print t}')
@@ -22,38 +24,15 @@ dotfiles_latest()
   echo ""
 }
 
-############################################
-# Git
-############################################
-# Create git changelog, usage: 'changelog <last tag>'
-git_changelog() { git log --oneline --no-merges "$1"..HEAD; }
-
-# Delete both remote and local branch
-git_remove_branch()
-{
-  branch=$1
-  git push -d origin "$branch"
-  git branch -d "$branch"
+#####################
+## Other           ##
+#####################
+# Time ZSH start up in order to measure performance
+timezsh() {
+  shell=${1-$SHELL}
+  for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
 }
 
-# Show the git log history N commits long
-glon()
-{
-  commits=$1
-  git log --oneline -n"$commits"
-}
-
-# Update the current with the latest state of another branch
-git_update_to_latest()
-{
-  branch=$1
-  git fetch origin "$branch":"$branch"
-  git merge "$branch"
-}
-
-############################################
-# Misc
-############################################
 # Run a cheat sheet for terminal commands.
 # Powered by http://cheat.sh
 cheat() {

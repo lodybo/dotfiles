@@ -1,5 +1,12 @@
 # Set some sane configuration defaults for npm
 
+echo "Would you like to set up defaults for npm? (y/n)"
+read -r response
+if [[ "$response" =~ ^([nN][oO]|[nN])$ ]]; then
+  echo "Skipping npm defaults"
+  return
+fi
+
 echo "Setting up sane npm defaults"
 echo ""
 
@@ -19,5 +26,4 @@ npm config -g set script-shell=/bin/bash
 echo "  › Installing global npm modules"
 npm install --global --registry https://registry.npmjs.org \
   npm-check \
-  rimraf \
-  vtop
+  rimraf

@@ -16,6 +16,9 @@
     ~/.zshrc:
       force: true
       path: zsh/zshrc
+    ~/.zshenv:
+      force: true
+      path: zsh/zshenv
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]

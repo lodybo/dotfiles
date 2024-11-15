@@ -1,0 +1,8 @@
+source './misc.sh'
+source './git.sh'
+source './bat.sh'
+source './exa.sh'
+source './npm.sh'
+source './corrections.sh'
+source './kubernetes.sh'
+source './docker.sh'
