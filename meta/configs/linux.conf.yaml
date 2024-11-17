@@ -23,7 +23,7 @@
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
     -
-      command: sh ./npm/set-defaults.sh
+      command: bash ./npm/set-defaults.sh
       description: Setting up sane npm defaults
       stdin: true
       stdout: true

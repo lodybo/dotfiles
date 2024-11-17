@@ -10,8 +10,8 @@ export PATH
 fpath=("$DOTFILES/zsh/fpath" $fpath)
 
 # Initialize completion system
-autoload -Uz compinit
-compinit
+autoload -Uz compinit; compinit
+autoload -U colors; colors
 
 # Source my aliases, functions, options and other stuff
 source "$DOTFILES/zsh/bootstrap.sh"
@@ -34,10 +34,10 @@ else
 fi
 
 # Enable GitHub Copilot CLI shortcuts
-eval "$(gh copilot alias -- zsh)"
+#eval "$(gh copilot alias -- zsh)"
 
 # Enable Gitea autocomplete
-PROG=tea _CLI_ZSH_AUTOCOMPLETE_HACK=1 source "~/Library/Application Support/tea/autocomplete.zsh"
+#PROG=tea _CLI_ZSH_AUTOCOMPLETE_HACK=1 source "~/Library/Application Support/tea/autocomplete.zsh"
 
 if type complete &>/dev/null; then
   _npm_completion () {
@@ -97,4 +97,4 @@ if [ -f ~/.zshrc_local ]; then
     source ~/.zshrc_local
 fi
 
-source $ZSH_CUSTOM/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+#source "$DOTFILES/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"

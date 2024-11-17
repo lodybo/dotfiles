@@ -41,6 +41,9 @@ alias shutdown='sudo shutdown now'
 # Calculator
 alias calc='bc'
 
+# Pass environment (and config) when doing sudo
+alias sudo='sudo -E'
+
 alias EDIT_HOSTS="sudo vim /etc/hosts"
 alias phpstorm="open -na \"PhpStorm.app\" --args \"$@\""
 alias lps="phpstorm -e"

@@ -1,6 +1,6 @@
-source './git.sh'
-source './exa.sh'
-source './misc.sh'
-source './docker.sh'
-source './history.sh'
-source './kubernetes.sh'
+source "$DOTFILES/zsh/functions/git.sh"
+source "$DOTFILES/zsh/functions/exa.sh"
+source "$DOTFILES/zsh/functions/misc.sh"
+source "$DOTFILES/zsh/functions/docker.sh"
+source "$DOTFILES/zsh/functions/history.sh"
+source "$DOTFILES/zsh/functions/kubernetes.sh"

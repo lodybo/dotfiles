@@ -1,8 +1,8 @@
-source './misc.sh'
-source './git.sh'
-source './bat.sh'
-source './exa.sh'
-source './npm.sh'
-source './corrections.sh'
-source './kubernetes.sh'
-source './docker.sh'
+source "$DOTFILES/zsh/aliases/misc.sh"
+source "$DOTFILES/zsh/aliases/git.sh"
+source "$DOTFILES/zsh/aliases/bat.sh"
+source "$DOTFILES/zsh/aliases/exa.sh"
+source "$DOTFILES/zsh/aliases/npm.sh"
+source "$DOTFILES/zsh/aliases/corrections.sh"
+source "$DOTFILES/zsh/aliases/kubernetes.sh"
+source "$DOTFILES/zsh/aliases/docker.sh"

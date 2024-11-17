@@ -1,11 +1,11 @@
 # Options
-source './options/bootstrap.sh'
+source "$DOTFILES/zsh/options/bootstrap.sh"
 
 # Functions
-source './functions/bootstrap.sh'
+source "$DOTFILES/zsh/functions/bootstrap.sh"
 
 # Aliases
-source './aliases/bootstrap.sh'
+source "$DOTFILES/zsh/aliases/bootstrap.sh"
 
 # External scripts
-source './external/bootstrap.sh'
+source "$DOTFILES/zsh/external/bootstrap.sh"

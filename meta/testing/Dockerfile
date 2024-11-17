@@ -1,10 +1,10 @@
-FROM ubuntu
+FROM debian:12.8
 
 RUN apt-get update && apt-get install -y \
   git \
   zsh \
   curl \
-  python2\
+  python3 \
   vim
 
 RUN useradd -rm -d /home/tester -s /bin/bash -g root -G sudo -u 1001 tester
@@ -16,8 +16,5 @@ WORKDIR /home/tester
 COPY --chown=tester:root . /home/tester/.dotfiles
 
 RUN cd /home/tester
-RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
-RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
-RUN . .nvm/nvm.sh && nvm install --lts
 
 CMD ["/bin/bash"]

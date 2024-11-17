@@ -24,14 +24,14 @@
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
     -
-      command: sh ./macos/set-defaults.sh
+      command: bash ./macos/set-defaults.sh
       description: Setting up sensible Mac defaults
       stdin: true
       stdout: true
       stderr: true
     - [sh ./macos/install-homebrew.sh, Installing and configuring Homebrew]
     -
-      command: sh ./npm/set-defaults.sh
+      command: bash ./npm/set-defaults.sh
       description: Setting up sane npm defaults
       stdin: true
       stdout: true
