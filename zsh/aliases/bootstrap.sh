@@ -1,7 +1,7 @@
 source "$DOTFILES/zsh/aliases/misc.sh"
 source "$DOTFILES/zsh/aliases/git.sh"
 source "$DOTFILES/zsh/aliases/bat.sh"
-source "$DOTFILES/zsh/aliases/exa.sh"
+source "$DOTFILES/zsh/aliases/eza.sh"
 source "$DOTFILES/zsh/aliases/npm.sh"
 source "$DOTFILES/zsh/aliases/corrections.sh"
 source "$DOTFILES/zsh/aliases/kubernetes.sh"

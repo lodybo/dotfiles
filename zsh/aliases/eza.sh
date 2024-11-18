@@ -5,8 +5,8 @@
 #####################
 ## List           ##
 #####################
-alias ls='exa'
-alias lsa='exa -lahg'
+alias ls='eza'
+alias lsa='eza -lahg'
 alias ll='lsa'
 
 #####################

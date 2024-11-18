@@ -1,5 +1,5 @@
 source "$DOTFILES/zsh/functions/git.sh"
-source "$DOTFILES/zsh/functions/exa.sh"
+source "$DOTFILES/zsh/functions/eza.sh"
 source "$DOTFILES/zsh/functions/misc.sh"
 source "$DOTFILES/zsh/functions/docker.sh"
 source "$DOTFILES/zsh/functions/history.sh"

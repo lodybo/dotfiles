@@ -7,7 +7,7 @@
 #####################
 function eagle_eye_n() {
   local level=$1
-  exa --tree --level="$level"
+  eza --tree --level="$level"
 }
 
 function eagle_eye_long_n() {
