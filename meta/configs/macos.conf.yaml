@@ -8,6 +8,14 @@
     - ~/bin
 
 - link:
+    ~/.gitconfig:
+      path: git/gitconfig
+    ~/.git_template: git/git_template
+    ~/.ssh/config:
+      path: ssh/config
+    ~/.vim: vim/vim
+    ~/.vimrc:
+      path: vim/vimrc
     ~/.zshrc:
       force: true
       path: zsh/zshrc
