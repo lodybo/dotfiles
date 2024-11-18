@@ -23,9 +23,6 @@ if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
 fi
 unset response
 
-# Pull exa and bat out of quarantine
-xattr -d com.apple.quarantine "$HOME/bin/exa" "$HOME/bin/bat"
-
 # Close any open System Preferences panes, to prevent them from overriding
 # settings we’re about to change
 osascript -e 'tell application "System Preferences" to quit'
@@ -174,7 +171,7 @@ defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 
 # Show the ~/Library folder
 echo "  › Show the ~/Library folder"
-chflags nohidden ~/Library && xattr -d com.apple.FinderInfo ~/Library
+chflags nohidden ~/Library
 
 ###############################################################################
 # Dock, Dashboard, and hot corners                                            #
