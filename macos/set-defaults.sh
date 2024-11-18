@@ -54,7 +54,7 @@ unset "$response"
 echo "  › Would you like to set up touch ID for shell elevation? (Requires password) (y/n)"
 read -r response
 if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
-  sh curl -sL https://gist.githubusercontent.com/RichardBronosky/31660eb4b0f0ba5e673b9bc3c9148a70/raw/touchid_sudo.sh | zsh
+  source "$DOTFILES/macos/set-pam-touch-id.sh"
 fi
 
 # disable keyboard press and hold popup
