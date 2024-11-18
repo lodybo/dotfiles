@@ -49,5 +49,8 @@
 [push]
   autoSetupRemote = true
 
+[pager]
+  branch = false
+
 [include]
 	path = ~/.gitconfig_local
