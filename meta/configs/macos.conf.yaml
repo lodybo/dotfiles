@@ -20,6 +20,12 @@
     ~/.zshenv:
       force: true
       path: zsh/zshenv
+    ~/.config/btop/btop.config:
+      force: true
+      path: btop/btop.config
+    ~/.config/btop/themes:
+      force: true
+      path: btop/themes
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
