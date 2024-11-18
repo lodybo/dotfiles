@@ -13,10 +13,14 @@ then
   # Install the correct homebrew for each OS type
   if test "$(uname)" = "Darwin";
   then
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   fi
 
 fi
+
+echo >> ~/.zprofile
+echo eval "$(/opt/homebrew/bin/brew shellenv)" >> ~/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Install packages from a brewfile
 brew bundle --file "$DOTFILES/macos/Brewfile"
