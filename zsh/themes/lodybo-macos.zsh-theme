@@ -1,7 +1,7 @@
 # TODO: Remove username from prompt, add clock to right hand side
 
 NEWLINE=$'\n'
-PROMPT='$(get_battery_status) %{$FG[green]%}%~ $(git_prompt_info)'
+PROMPT='$(get_battery_status)%{$FG[green]%}%~$(git_prompt_info)'
 PROMPT+="${NEWLINE}%{$fg[magenta]%}❯%{$reset_color%} "
 
 ZSH_THEME_GIT_PROMPT_PREFIX=" %{$fg_bold[white]%}(%{$fg[white]%}"
