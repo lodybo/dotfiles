@@ -18,11 +18,13 @@ The files that will look for overrides are:
 My dotfiles are divided in a number of topics (an idea from [Zach Holman](https://github.com/holman/dotfiles#topical)). The top-level folders are "topics" which contain configuration. It provides a cleaner overview IMO.
 
 With all that said, these are the topics currently available:
-- `bin`: for all (cross-platform) binaries that I want to run (e.g. [exa](https://the.exa.website/)).
+- `bin`: for some binaries that I need to use.
+- `btop`: for my `btop` configuration.
 - `git`: for my git configuration and commit templates.
 - `ssh`: for "global" SSH configuration that I wanna have.
 - `vim`: for my Vim configuration.
-- `oh-my-zsh`: for my custom theme and the home of the `custom` folder with my aliases, functions and plugins.
+- `macos`: for some macOS specific setup.
+- `npm`: for npm binaries that I want to install globally and other Node-specific configurations.
 - `zsh`: for my Zsh configuration.
 
 ### npm
@@ -72,7 +74,7 @@ If you want to set up the Linux, you can run the following commands:
 cd ~
 git clone https://github.com/lodybo/dotfiles.git .dotfiles
 cd .dotfiles
-./install linux
+./install
 ```
 
 ## Installing the macOS version
@@ -86,7 +88,7 @@ Then you can run the following commands:
 cd ~
 git clone https://github.com/lodybo/dotfiles.git .dotfiles
 cd .dotfiles
-./install macos
+./install
 ```
 
 ### SSH profiles

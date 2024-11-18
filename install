@@ -2,7 +2,6 @@
 
 set -e
 
-DEFAULT_CONFIG_PREFIX="linux"
 CONFIG_SUFFIX=".conf.yaml"
 CONFIG_DIR="meta/configs"
 DOTBOT_DIR="dotbot"
@@ -14,8 +13,17 @@ cd "${BASEDIR}"
 git submodule update --init --recursive "${DOTBOT_DIR}"
 
 echo ""
-echo "Running Dotbot configs"
-for conf in "${DEFAULT_CONFIG_PREFIX}" "${@}"; do
-  echo "Setting up ${conf} configuration"
-  "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG_DIR}/${conf}${CONFIG_SUFFIX}"
-done
+echo "Determining configuration to set up"
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  conf="macos"
+else
+  conf="linux"
+fi
+
+echo ""
+echo "Setting up ${conf} configuration"
+"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG_DIR}/${conf}${CONFIG_SUFFIX}"
+
+echo ""
+echo "Restarting shell"
+exec "${SHELL}" -l
