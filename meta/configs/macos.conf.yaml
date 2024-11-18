@@ -8,12 +8,6 @@
     - ~/bin
 
 - link:
-    ~/bin/bat:
-      force: true
-      path: bin/bat-macos
-    ~/bin/exa:
-      force: true
-      path: bin/exa-macos
     ~/.zshrc:
       force: true
       path: zsh/zshrc
