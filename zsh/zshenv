@@ -20,4 +20,4 @@ export LC_ALL=en_US.UTF-8
 export SSH_AUTH_SOCK="~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock"
 export KUBE_EDITOR=vim
 
-export DOTFILES_ITERM_SSH_PROFILES="$DOTFILES_ITERM_SSH_PROFILES|detalentversneller.nl|letsleds.nl|staging.letsleds.nl|redis.letsleds.nlletsleds.de|letsleds.nl|bertusborgers.nl|naskady-local|naskady|lodybo-bastion|turkostabunita"
+export DOTFILES_ITERM_SSH_PROFILES="$DOTFILES_ITERM_SSH_PROFILES|detalentversneller.nl|letsleds.nl|staging.letsleds.nl|redis.letsleds.nl|letsleds.nl|bertusborgers.nl|naskady-local|naskady|lodybo-bastion|turkostabunita"

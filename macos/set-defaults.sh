@@ -98,6 +98,14 @@ defaults write com.apple.screensaver askForPasswordDelay -int 0
 echo "  › Set dark interface style"
 defaults write NSGlobalDomain AppleInterfaceStyle -string "Dark"
 
+# Specify the preferences directory
+echo "  › Specify iTerm2 preferences directory"
+defaults write com.googlecode.iterm2 PrefsCustomFolder -string "~/.dotfiles/macos/iterm2"
+
+# Tell iTerm2 to use the custom preferences in the directory
+echo "  › Tell iTerm2 to use the custom preferences in the directory"
+defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
+
 ###############################################################################
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
 ###############################################################################
