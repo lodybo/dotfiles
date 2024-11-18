@@ -57,7 +57,7 @@ The first step is to install these dependencies before we can go any further:
 apt update
 
 # Install needed stuff
-apt install -y git curl python zsh
+apt install -y git curl python3 zsh
 ```
 
 ### Cloning this repo
