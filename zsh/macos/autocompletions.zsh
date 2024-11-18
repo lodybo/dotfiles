@@ -211,4 +211,6 @@ ghce() {
 
 	GH_DEBUG="$GH_DEBUG" GH_HOST="$GH_HOST" gh copilot explain "$@"
 }
-PROG=tea _CLI_ZSH_AUTOCOMPLETE_HACK=1 source "/Users/lodyborgers/Library/Application Support/tea/autocomplete.zsh"
+if [ -f "/Users/lodyborgers/Library/Application Support/tea/autocomplete.zsh" ]; then
+  PROG=tea _CLI_ZSH_AUTOCOMPLETE_HACK=1 source "/Users/lodyborgers/Library/Application Support/tea/autocomplete.zsh"
+fi
