@@ -33,6 +33,7 @@ function colorssh() {
 compdef _ssh tabc=ssh
 
 alias ssh="colorssh"
+compdef _ssh colorssh=ssh
 
 # This would be easy to extend to check if a theme with the name of the server exists and set it, and
 # fall back to the SSH theme. This way you can have different colors for different remote environments
