@@ -15,10 +15,7 @@ The files that will look for overrides are:
 - `zsh` (`~/.zshrc_local`)
 
 ## Topics
-My dotfiles are divided in a number of topics (an idea from [Zach Holman](https://github.com/holman/dotfiles#topical)). The top-level folders are "topics" which contain configuration. It provides a cleaner overview IMO. 
-
-My approach differs from Zach's approach in that I don't load in `.zsh` files within each topic into my shell environment. I use [Oh My Zsh's customization options](https://github.com/ohmyzsh/ohmyzsh/wiki/Customization#overriding-internals) that allow me to provide any shell scripts in a `custom/` folder which it will load into my environment. It's also the home of my custom functions and the external plugins I want to load into Oh My Zsh.
-I then set Oh My Zsh' custom folder to `.dotfiles/oh-my-zsh/custom` so that I don't have to copy those files and can keep it up to date in my repo.
+My dotfiles are divided in a number of topics (an idea from [Zach Holman](https://github.com/holman/dotfiles#topical)). The top-level folders are "topics" which contain configuration. It provides a cleaner overview IMO.
 
 With all that said, these are the topics currently available:
 - `bin`: for all (cross-platform) binaries that I want to run (e.g. [exa](https://the.exa.website/)).
