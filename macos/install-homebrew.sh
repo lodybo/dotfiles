@@ -18,14 +18,6 @@ then
 
 fi
 
-# Add Homebrew to the path for M1 MacBooks
-if  $(sysctl -n machdep.cpu.brand_string) =~ "M1"
-then
-  echo "Setting up Homebrew especially for a M1 MacBook.."
-  echo eval "$(/opt/homebrew/bin/brew shellenv)" >> ~/.zprofile
-  eval "$(/opt/homebrew/bin/brew shellenv)"
-fi
-
 # Install packages from a brewfile
 brew bundle --file "$DOTFILES/macos/Brewfile"
 
