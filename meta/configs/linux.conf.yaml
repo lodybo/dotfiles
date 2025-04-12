@@ -18,9 +18,6 @@
     ~/bin/bat:
       force: true
       path: bin/bat-linux
-    ~/bin/exa:
-      force: true
-      path: bin/exa-linux
     ~/.zshrc:
       force: true
       path: zsh/zshrc
@@ -42,3 +39,4 @@
       stdin: true
       stdout: true
       stderr: true
+    - [bash ./linux/apt.sh, Installing packages]
