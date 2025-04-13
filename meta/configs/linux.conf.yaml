@@ -39,4 +39,9 @@
       stdin: true
       stdout: true
       stderr: true
-    - [bash ./linux/apt.sh, Installing packages]
+    -
+      command: bash ./linux/apt.sh
+      description: Installing packages
+      stdin: true
+      stdout: true
+      stderr: true
