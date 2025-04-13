@@ -67,7 +67,7 @@ cd ~
 git clone https://github.com/lodybo/dotfiles.git .dotfiles
 ```
 
-### Installing the Linux version
+## Installing the Linux version
 If you want to set up the Linux, you can run the following commands:
 
 ```shell
@@ -75,6 +75,13 @@ cd ~
 git clone https://github.com/lodybo/dotfiles.git .dotfiles
 cd .dotfiles
 ./install
+```
+
+### Non-interactive install
+If you want to run the installation non-interactively, you can run set the following environment variables:
+
+```shell
+export DOTFILES_INSTALL_NPM_DEFAULTS=1 # Install npm defaults, 0 to skip
 ```
 
 ## Installing the macOS version
